@@ -4,7 +4,6 @@ using System.Globalization;
 using System.IO;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using Chronos;
 
 class Program
 {
@@ -29,7 +28,6 @@ class Program
             {
                 try
                 {
-                    //string url = "https://www.cmegroup.com/markets/cryptocurrencies/bitcoin/bitcoin.settlements.html#tradeDate=01%2F03%2F2025";
                     string formattedUrl = $"https://www.cmegroup.com/markets/cryptocurrencies/bitcoin/bitcoin.settlements.html#tradeDate={referenceDate.ToString("MM")}%2F{referenceDate.ToString("dd")}%2F{referenceDate.ToString("yyyy")}";
                     
                     driver.Navigate().GoToUrl(formattedUrl);
