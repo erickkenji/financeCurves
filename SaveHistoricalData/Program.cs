@@ -35,7 +35,9 @@ class Program
 
         ChromeOptions options = new ChromeOptions();
         options.AddArgument("--start-maximized");
-        Calendar calendar = new UnitedStates(UnitedStates.Market.NYSE); // CME é uma bolsa americana, utilizando o calendário NYC
+
+        // CME é uma bolsa americana, utilizando o calendário NYC
+        Calendar calendar = new UnitedStates(UnitedStates.Market.NYSE); 
 
         foreach (DateTime referenceDate in referenceDateCollection)
         {
