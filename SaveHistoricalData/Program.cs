@@ -78,7 +78,7 @@ class Program
                     }
 
                     // Save to CSV
-                    string outputPath = $"C:\\Users\\EK\\source\\repos\\financeCurves\\HistoricalData\\{referenceDate.ToString("yyyy")}{referenceDate.ToString("MM")}{referenceDate.ToString("dd")}_prices.csv";
+                    string outputPath = Path.Combine(Directory.GetCurrentDirectory(), "..", "..", "..", "..", "HistoricalData", $"{referenceDate:yyyy}{referenceDate:MM}{referenceDate:dd}_prices.csv");
                     using (StreamWriter writer = new StreamWriter(outputPath))
                     {
                         writer.WriteLine("Month, Price");
