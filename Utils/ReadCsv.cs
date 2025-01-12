@@ -8,7 +8,7 @@ namespace Utils
     public class FuturePrice
     {
         public DateTime Month { get; set; }
-        public decimal Price { get; set; }
+        public double Price { get; set; }
     }
 
     public static class ReadCsv
@@ -40,7 +40,7 @@ namespace Utils
                         throw new Exception($"Invalid date on line: {line}");
                     }
 
-                    if (!decimal.TryParse(parts[1], NumberStyles.Any, CultureInfo.InvariantCulture, out decimal price))
+                    if (!double.TryParse(parts[1], NumberStyles.Any, CultureInfo.InvariantCulture, out double price))
                     {
                         throw new Exception($"Invalid price on line: {line}");
                     }
