@@ -13,7 +13,7 @@ namespace Utils
 
     public static class ReadCsv
     {
-        static List<FuturePrice> ReadCsvFile(string filePath)
+        public static List<FuturePrice> ReadCsvFile(string filePath)
         {
             List<FuturePrice> futurePrices = new List<FuturePrice>();
 

@@ -6,4 +6,7 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+	<ItemGroup>
+		<PackageReference Include="QuantLib" Version="1.36.0" />
+	</ItemGroup>
 </Project>
