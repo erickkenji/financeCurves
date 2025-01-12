@@ -1,14 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
 
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="QuantLib" Version="1.36.0" />
+		<PackageReference Include="Selenium.WebDriver" Version="4.27.0" />
+		<None Update="chromedriver-win64/chromedriver.exe">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Selenium.WebDriver" Version="4.27.0" />
-  </ItemGroup>
-
+	<Target Name="CopyChromedriver" AfterTargets="Build">
+		<Copy SourceFiles="chromedriver-win64/chromedriver.exe" DestinationFolder="$(OutDir)" />
+	</Target>
 </Project>

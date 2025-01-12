@@ -4,27 +4,42 @@ using System.Globalization;
 using System.IO;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using QuantLib;
+using Calendar = QuantLib.Calendar;
+using Path = System.IO.Path;
 
 class Program
 {
     private static HashSet<DateTime> referenceDateCollection = new HashSet<DateTime>()
     {
-        new DateTime(2025, 01, 03),
-        new DateTime(2025, 01, 02),
-        new DateTime(2024, 12, 31),
-        new DateTime(2024, 12, 30)
+        new DateTime(2025, 01, 10),
+        new DateTime(2025, 01, 09),
+        new DateTime(2025, 01, 08),
+        new DateTime(2025, 01, 07),
+        new DateTime(2025, 01, 06)
     };
+
+    static DateTime GetDateTimeFromQuantLibDate(QuantLib.Date date)
+    {
+        return new DateTime(date.year(), (int)date.month(), date.dayOfMonth());
+    }
+
+    static QuantLib.Date GetQuantLibDateFromDateTime(DateTime datetime)
+    {
+        return new QuantLib.Date(datetime.Day, (Month)datetime.Month, datetime.Year);
+    }
 
     static void Main(string[] args)
     {
-        string driverPath = "C:\\Program Files\\Google\\Chrome\\chromedriver-win64";
+        string driverRelativePath = Path.Combine(Directory.GetCurrentDirectory(), "chromedriver-win64");
 
         ChromeOptions options = new ChromeOptions();
         options.AddArgument("--start-maximized");
+        Calendar calendar = new UnitedStates(UnitedStates.Market.NYSE); // CME é uma bolsa americana, utilizando o calendário NYC
 
         foreach (DateTime referenceDate in referenceDateCollection)
         {
-            using (ChromeDriver driver = new ChromeDriver(driverPath, options))
+            using (ChromeDriver driver = new ChromeDriver(driverRelativePath, options))
             {
                 try
                 {
@@ -49,7 +64,9 @@ class Program
                             string priceText = row.FindElement(By.CssSelector("td:nth-child(7)")).Text;
 
                             DateTime month = DateTime.ParseExact(monthText, "MMM yy", CultureInfo.InvariantCulture);
-                            DateTime maturityDate = month; // TODO: pegar lastBusinessDayOfMonth
+                            QuantLib.Date QuantLibMaturityDate = calendar.endOfMonth(GetQuantLibDateFromDateTime(month));
+                            DateTime maturityDate = GetDateTimeFromQuantLibDate(QuantLibMaturityDate);
+
                             double price = double.Parse(priceText, NumberStyles.Any, CultureInfo.InvariantCulture);
 
                             priceCollection.Add((maturityDate, price));
@@ -61,7 +78,7 @@ class Program
                     }
 
                     // Save to CSV
-                    string outputPath = $"{referenceDate.ToString("yyyy")}{referenceDate.ToString("MM")}{referenceDate.ToString("dd")}_prices.csv";
+                    string outputPath = $"C:\\Users\\EK\\source\\repos\\financeCurves\\HistoricalData\\{referenceDate.ToString("yyyy")}{referenceDate.ToString("MM")}{referenceDate.ToString("dd")}_prices.csv";
                     using (StreamWriter writer = new StreamWriter(outputPath))
                     {
                         writer.WriteLine("Month, Price");
