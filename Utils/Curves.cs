@@ -54,7 +54,7 @@ namespace Utils
                 double periods = 365 / calendar.businessDaysBetween(QuantLibUtils_.GetQuantLibDateFromDateTime(spotPrice.Date), QuantLibUtils_.GetQuantLibDateFromDateTime(futurePrice.Date));
                 double implicitRate = priceFactor * periods;
 
-                ratesFromFactor.Add(new Vertex({Date = futurePrice.Date, Value = implicitRate});
+                ratesFromFactor.Add(new Vertex{Date = futurePrice.Date, Value = implicitRate});
             }
 
             return ratesFromFactor;
