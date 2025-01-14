@@ -26,7 +26,7 @@ class Program
 
     static void Main(string[] args)
     {
-        string driverRelativePath = Path.Combine(Directory.GetCurrentDirectory(), "chromedriver-win64");
+        string driverRelativePath = Path.Combine(Directory.GetCurrentDirectory(), "..", "..", "..", "..", "chromedriver-win64");
 
         ChromeOptions options = new ChromeOptions();
         options.AddArgument("--start-maximized");

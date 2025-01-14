@@ -10,12 +10,5 @@
 		<PackageReference Include="QuantLib" Version="1.36.0" />
 		<PackageReference Include="Selenium.WebDriver" Version="4.27.0" />
 		<ProjectReference Include="..\Utils\Utils.csproj" />
-		<None Update="chromedriver-win64/chromedriver.exe">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</None>
 	</ItemGroup>
-
-	<Target Name="CopyChromedriver" AfterTargets="Build">
-		<Copy SourceFiles="chromedriver-win64/chromedriver.exe" DestinationFolder="$(OutDir)" />
-	</Target>
 </Project>
