@@ -17,7 +17,11 @@ class Program
         new DateTime(2025, 01, 09),
         new DateTime(2025, 01, 08),
         new DateTime(2025, 01, 07),
-        new DateTime(2025, 01, 06)
+        new DateTime(2025, 01, 06),
+        new DateTime(2025, 01, 03),
+        new DateTime(2025, 01, 02),
+        new DateTime(2024, 12, 31),
+        new DateTime(2024, 12, 30)
     };
 
     static void Main(string[] args)

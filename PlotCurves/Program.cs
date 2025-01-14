@@ -15,7 +15,11 @@ class Program
         new DateTime(2025, 01, 09),
         new DateTime(2025, 01, 08),
         new DateTime(2025, 01, 07),
-        new DateTime(2025, 01, 06)
+        new DateTime(2025, 01, 06),
+        new DateTime(2025, 01, 03),
+        new DateTime(2025, 01, 02),
+        new DateTime(2024, 12, 31),
+        new DateTime(2024, 12, 30)
     };
 
     static void Main(string[] args)
@@ -32,10 +36,14 @@ class Program
             if (DateTime.TryParseExact(fileName, "yyyyMMdd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime referenceDate))
             {
                 // Recover vertexes from file
-                List<FuturePrice> futurePrices = ReadCsv.ReadCsvFile(historicalDataFilePath);
+                Dictionary<DateTime, double> futurePrices = ReadCsv.ReadCsvFile(historicalDataFilePath);
+
+                // Recover spot rate
+                double spotPrice = MarketDataUtils.GetUSDBTCSpotPrice();
 
                 // Recover implicit rates
-                List<RateVertex> 
+                FutureCurve futureCurve = new FutureCurve(futurePrices, referenceDate, spotPrice, calendar);
+                Dictionary<DateTime, double> rates = futureCurve.Rates;
             }
             else
             {
