@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 using QuantLib;
 using Calendar = QuantLib.Calendar;
 using Path = System.IO.Path;
@@ -24,6 +26,7 @@ class Program
 
     static void Main(string[] args)
     {
+        
         // CME is an american exchange, using NYC calendar
         Calendar calendar = new UnitedStates(UnitedStates.Market.NYSE);
 
@@ -39,7 +42,7 @@ class Program
                 Dictionary<DateTime, double> futurePrices = ReadCsv.ReadCsvFile(historicalDataFilePath);
 
                 // Recover spot rate
-                double spotPrice = MarketDataUtils.GetUSDBTCSpotPrice();
+                double spotPrice = MarketDataUtils.GetUSDBTCSpotPrice(referenceDate);
 
                 // Recover implicit rates
                 FutureCurve futureCurve = new FutureCurve(futurePrices, referenceDate, spotPrice, calendar);
