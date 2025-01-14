@@ -7,6 +7,7 @@ using OpenQA.Selenium.Chrome;
 using QuantLib;
 using Calendar = QuantLib.Calendar;
 using Path = System.IO.Path;
+using Utils;
 
 class Program
 {
@@ -19,16 +20,6 @@ class Program
         new DateTime(2025, 01, 06)
     };
 
-    static DateTime GetDateTimeFromQuantLibDate(QuantLib.Date date)
-    {
-        return new DateTime(date.year(), (int)date.month(), date.dayOfMonth());
-    }
-
-    static QuantLib.Date GetQuantLibDateFromDateTime(DateTime datetime)
-    {
-        return new QuantLib.Date(datetime.Day, (Month)datetime.Month, datetime.Year);
-    }
-
     static void Main(string[] args)
     {
         string driverRelativePath = Path.Combine(Directory.GetCurrentDirectory(), "chromedriver-win64");
@@ -36,7 +27,7 @@ class Program
         ChromeOptions options = new ChromeOptions();
         options.AddArgument("--start-maximized");
 
-        // CME é uma bolsa americana, utilizando o calendário NYC
+        // CME is an american exchange, using NYC calendar
         Calendar calendar = new UnitedStates(UnitedStates.Market.NYSE); 
 
         foreach (DateTime referenceDate in referenceDateCollection)
@@ -66,8 +57,8 @@ class Program
                             string priceText = row.FindElement(By.CssSelector("td:nth-child(7)")).Text;
 
                             DateTime month = DateTime.ParseExact(monthText, "MMM yy", CultureInfo.InvariantCulture);
-                            QuantLib.Date QuantLibMaturityDate = calendar.endOfMonth(GetQuantLibDateFromDateTime(month));
-                            DateTime maturityDate = GetDateTimeFromQuantLibDate(QuantLibMaturityDate);
+                            QuantLib.Date QuantLibMaturityDate = calendar.endOfMonth(QuantLibUtils_.GetQuantLibDateFromDateTime(month));
+                            DateTime maturityDate = QuantLibUtils_.GetDateTimeFromQuantLibDate(QuantLibMaturityDate);
 
                             double price = double.Parse(priceText, NumberStyles.Any, CultureInfo.InvariantCulture);
 
@@ -80,7 +71,7 @@ class Program
                     }
 
                     // Save to CSV
-                    string outputPath = Path.Combine(Directory.GetCurrentDirectory(), "..", "..", "..", "..", "HistoricalData", $"{referenceDate:yyyy}{referenceDate:MM}{referenceDate:dd}_prices.csv");
+                    string outputPath = Path.Combine(Directory.GetCurrentDirectory(), "..", "..", "..", "..", "HistoricalData", $"{referenceDate:yyyy}{referenceDate:MM}{referenceDate:dd}.csv");
                     using (StreamWriter writer = new StreamWriter(outputPath))
                     {
                         writer.WriteLine("Month, Price");
