@@ -2,20 +2,15 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using QuantLib;
 
 namespace Utils
 {
-    public class FuturePrice
-    {
-        public DateTime Month { get; set; }
-        public double Price { get; set; }
-    }
-
     public static class ReadCsv
     {
-        public static List<FuturePrice> ReadCsvFile(string filePath)
+        public static Dictionary<DateTime, double> ReadCsvFile(string filePath)
         {
-            List<FuturePrice> futurePrices = new List<FuturePrice>();
+            Dictionary<DateTime, double> futurePrices = new Dictionary<DateTime, double>() {};
 
             using (StreamReader reader = new StreamReader(filePath))
             {
@@ -45,7 +40,7 @@ namespace Utils
                         throw new Exception($"Invalid price on line: {line}");
                     }
 
-                    futurePrices.Add(new FuturePrice { Month = month, Price = price });
+                    futurePrices.Add(month, price);
                 }
             }
 

@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaveHistoricalData", "SaveH
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utils", "Utils\Utils.csproj", "{7AF1B353-3F14-47CC-8FAA-5A333CDD3182}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlotCurves", "PlotCurves\PlotCurves.csproj", "{DD2FC917-FF64-42A3-88CE-12E71AB02FA0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{7AF1B353-3F14-47CC-8FAA-5A333CDD3182}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7AF1B353-3F14-47CC-8FAA-5A333CDD3182}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7AF1B353-3F14-47CC-8FAA-5A333CDD3182}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD2FC917-FF64-42A3-88CE-12E71AB02FA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD2FC917-FF64-42A3-88CE-12E71AB02FA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD2FC917-FF64-42A3-88CE-12E71AB02FA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD2FC917-FF64-42A3-88CE-12E71AB02FA0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
