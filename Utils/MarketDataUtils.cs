@@ -44,7 +44,11 @@ namespace Utils
                                 string dateText = columns[0].Text.Trim();
                                 string priceText = columns[4].Text.Trim();
 
-                                DateTime date = DateTime.ParseExact(dateText, "MMM dd, yyyy", CultureInfo.InvariantCulture);
+                                string[] formats = { "MMM d, yyyy", "MMM dd, yyyy" };
+                                DateTime date = DateTime.TryParseExact(dateText, formats,
+                                    CultureInfo.InvariantCulture, DateTimeStyles.None, out date)
+                                    ? date
+                                    : DateTime.MinValue;
                                 double price = double.Parse(priceText, NumberStyles.Any, CultureInfo.InvariantCulture);
 
                                 fixingsCollection.Add(date, price);

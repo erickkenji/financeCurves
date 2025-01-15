@@ -30,14 +30,16 @@ namespace Utils
             this.ReferenceDate = referenceDate;
 
             // Calculates implicit rate from factor
+            Dictionary<DateTime, double> rates = new Dictionary<DateTime, double>() { };
             foreach (KeyValuePair<DateTime, double> kvp in factors)
             {
                 double priceFactor = (spotPrice - kvp.Value) / kvp.Value;
                 double periods = 365 / calendar.businessDaysBetween(QuantLibUtils_.GetQuantLibDateFromDateTime(referenceDate), QuantLibUtils_.GetQuantLibDateFromDateTime(kvp.Key));
                 double implicitRate = priceFactor * periods;
 
-                this.Rates.Add(kvp.Key, implicitRate);
+                rates.Add(kvp.Key, implicitRate);
             }
+            this.Rates = rates;
         }
     }
 

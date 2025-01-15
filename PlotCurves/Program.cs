@@ -35,7 +35,8 @@ class Program
 
         foreach (string historicalDataFilePath in historicalDataFiles)
         {
-            string fileName = Path.GetFileName(historicalDataFilePath);
+            string fullFileName = Path.GetFileName(historicalDataFilePath);
+            string fileName = fullFileName.Substring(0, fullFileName.Length - 4);
             if (DateTime.TryParseExact(fileName, "yyyyMMdd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime referenceDate))
             {
                 // Recover vertexes from file
