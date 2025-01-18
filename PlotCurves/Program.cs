@@ -56,6 +56,10 @@ class Program
                 // Interpolation
                 CubicSplineInterpolation interpolation = new CubicSplineInterpolation(rates);
                 Dictionary<DateTime, double> interpolatedCurve = interpolation.InterpolateAll();
+
+                // Plot Graph
+                PlotGraph plot = new PlotGraph(interpolatedCurve);
+                plot.PlotCurve();
             }
             else
             {
