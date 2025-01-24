@@ -11,24 +11,6 @@ using Utils;
 
 class Program
 {
-    private static HashSet<DateTime> referenceDateCollection = new HashSet<DateTime>()
-    {
-        new DateTime(2025, 01, 17),
-        //new DateTime(2025, 01, 16),
-        //new DateTime(2025, 01, 15),
-        //new DateTime(2025, 01, 14),
-        //new DateTime(2025, 01, 13),
-        //new DateTime(2025, 01, 10),
-        //new DateTime(2025, 01, 09),
-        //new DateTime(2025, 01, 08),
-        //new DateTime(2025, 01, 07),
-        //new DateTime(2025, 01, 06),
-        //new DateTime(2025, 01, 03),
-        //new DateTime(2025, 01, 02),
-        //new DateTime(2024, 12, 31),
-        //new DateTime(2024, 12, 30)
-    };
-
     static void Main(string[] args)
     {
         // CME is an american exchange, using NYC calendar
@@ -58,7 +40,7 @@ class Program
                 Dictionary<DateTime, double> interpolatedCurve = interpolation.InterpolateAll();
 
                 // Plot Graph
-                PlotGraph plot = new PlotGraph(interpolatedCurve);
+                PlotGraph plot = new PlotGraph(interpolatedCurve, referenceDate);
                 plot.PlotCurve();
             }
             else

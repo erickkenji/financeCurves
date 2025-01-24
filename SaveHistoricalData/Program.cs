@@ -13,6 +13,9 @@ class Program
 {
     private static HashSet<DateTime> referenceDateCollection = new HashSet<DateTime>()
     {
+        new DateTime(2025, 01, 23),
+        new DateTime(2025, 01, 22),
+        new DateTime(2025, 01, 21),
         new DateTime(2025, 01, 17),
         new DateTime(2025, 01, 16),
         new DateTime(2025, 01, 15),

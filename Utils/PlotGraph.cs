@@ -17,9 +17,11 @@ namespace Utils
     public class PlotGraph
     {
         private readonly Dictionary<DateTime, double> curve;
-        public PlotGraph(Dictionary<DateTime, double> curve)
+        private readonly DateTime referenceDate;
+        public PlotGraph(Dictionary<DateTime, double> curve, DateTime referenceDate)
         {
             this.curve = curve;
+            this.referenceDate = referenceDate;
         }
 
         public void PlotCurve()
@@ -53,7 +55,7 @@ namespace Utils
 
             // Exportar o gráfico como SVG
             var exporter = new SvgExporter { Width = 800, Height = 600 };
-            using (var stream = File.Create("curve.svg"))
+            using (var stream = File.Create($"{this.referenceDate:yyyy-MM-dd}.svg"))
             {
                 exporter.Export(plotModel, stream);
             }
