@@ -39,7 +39,7 @@ class Program
         ChromeOptions options = new ChromeOptions();
         options.AddArgument("--start-maximized");
 
-        // CME is an american exchange, using NYC calendar
+        // CME é uma exchange americana, usamos calendário NYC
         Calendar calendar = new UnitedStates(UnitedStates.Market.NYSE); 
 
         foreach (DateTime referenceDate in referenceDateCollection)
@@ -51,11 +51,8 @@ class Program
                     string formattedUrl = $"https://www.cmegroup.com/markets/cryptocurrencies/bitcoin/bitcoin.settlements.html#tradeDate={referenceDate.ToString("MM")}%2F{referenceDate.ToString("dd")}%2F{referenceDate.ToString("yyyy")}";
                     
                     driver.Navigate().GoToUrl(formattedUrl);
-
-                    // Wait page loading
                     System.Threading.Thread.Sleep(2000);
 
-                    // Locate table web element
                     IWebElement containerDiv = driver.FindElement(By.CssSelector(".main-table-wrapper[role='presentation']"));
                     IWebElement table = containerDiv.FindElement(By.CssSelector("table"));
                     IList<IWebElement> rows = table.FindElements(By.CssSelector("tbody tr"));
@@ -82,7 +79,6 @@ class Program
                         }
                     }
 
-                    // Save to CSV
                     string outputPath = Path.Combine(Directory.GetCurrentDirectory(), "..", "..", "..", "..", "HistoricalData", $"{referenceDate:yyyy}{referenceDate:MM}{referenceDate:dd}.csv");
                     using (StreamWriter writer = new StreamWriter(outputPath))
                     {

@@ -29,7 +29,7 @@ namespace Utils
             this.Factors = factors;
             this.ReferenceDate = referenceDate;
 
-            // Calculates implicit rate from factor
+            // Calcula taxa implicita do fator
             Dictionary<DateTime, double> rates = new Dictionary<DateTime, double>() { };
             foreach (KeyValuePair<DateTime, double> kvp in factors)
             {
@@ -45,7 +45,6 @@ namespace Utils
 
     public static class CurveUtils
     {
-        // Calculates implicit rate from factor
         public static List<Vertex> RetrieveRatesFromFactor(List<Vertex> futurePrices, Vertex spotPrice, Calendar calendar)
         {
             List<Vertex> ratesFromFactor = new List<Vertex>() { };

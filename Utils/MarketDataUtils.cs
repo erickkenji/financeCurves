@@ -13,7 +13,7 @@ namespace Utils
 {
     public static class MarketDataUtils
     {
-        // Fixing Data as Lazy
+        // Fixing Data utilizando design pattern Lazy
         private static Lazy<Dictionary<DateTime, double>> usdBtcFixings = new Lazy<Dictionary<DateTime, double>>(() => LoadFixings());
         public static Dictionary<DateTime, double> UsdBtcFixings => usdBtcFixings.Value;
 

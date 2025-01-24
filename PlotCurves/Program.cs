@@ -13,7 +13,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        // CME is an american exchange, using NYC calendar
         Calendar calendar = new UnitedStates(UnitedStates.Market.NYSE);
 
         string historicalDataPath = Path.Combine(Directory.GetCurrentDirectory(), "..", "..", "..", "..", "HistoricalData");
@@ -25,21 +24,21 @@ class Program
             string fileName = fullFileName.Substring(0, fullFileName.Length - 4);
             if (DateTime.TryParseExact(fileName, "yyyyMMdd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime referenceDate))
             {
-                // Recover vertexes from file
+                // Recupera preços dos futuros do historical data (salvo em arquivo)
                 Dictionary<DateTime, double> futurePrices = ReadCsv.ReadCsvFile(historicalDataFilePath);
 
-                // Recover spot rate
+                // Recupera preço spot
                 double spotPrice = MarketDataUtils.GetUSDBTCSpotPrice(referenceDate);
 
-                // Recover implicit rates
+                // Calcula taxa implicita
                 FutureCurve futureCurve = new FutureCurve(futurePrices, referenceDate, spotPrice, calendar);
                 Dictionary<DateTime, double> rates = futureCurve.Rates;
 
-                // Interpolation
+                // Realiza interpolação
                 CubicSplineInterpolation interpolation = new CubicSplineInterpolation(rates);
                 Dictionary<DateTime, double> interpolatedCurve = interpolation.InterpolateAll();
 
-                // Plot Graph
+                // Plota o gráfico
                 PlotGraph plot = new PlotGraph(interpolatedCurve, referenceDate);
                 plot.PlotCurve();
             }

@@ -26,23 +26,26 @@ namespace Utils
             _y = curve.OrderBy(kvp => kvp.Key).Select(kvp => kvp.Value).ToList();
 
             int n = _x.Count;
-            _a = new List<double>(_y);
+            _a = new List<double>(_y); // valores de _a do polinômio são inicializados com _y
             _b = new List<double>(new double[n - 1]);
             _c = new List<double>(new double[n]);
             _d = new List<double>(new double[n - 1]);
 
+            // Cálculo da distância entre os pontos _x
             double[] h = new double[n - 1];
             for (int i = 0; i < n - 1; i++)
             {
                 h[i] = _x[i + 1] - _x[i];
             }
 
+            // alpha relaciona as diferenças entre valores de _a (os y) para determinar as inclinações relativas entre pontos consecutivos.
             double[] alpha = new double[n - 1];
             for (int i = 1; i < n - 1; i++)
             {
                 alpha[i] = (3 / h[i]) * (_a[i + 1] - _a[i]) - (3 / h[i - 1]) * (_a[i] - _a[i - 1]);
             }
 
+            // Cálculo dos coeficientes cúbicos
             double[] l = new double[n];
             double[] mu = new double[n];
             double[] z = new double[n];
