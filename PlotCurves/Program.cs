@@ -18,6 +18,7 @@ class Program
         string historicalDataPath = Path.Combine(Directory.GetCurrentDirectory(), "..", "..", "..", "..", "HistoricalData");
         string[] historicalDataFiles = Directory.GetFiles(historicalDataPath);
 
+        Dictionary<DateTime, Dictionary<DateTime, double>> allRates = new Dictionary<DateTime, Dictionary<DateTime, double>>();
         foreach (string historicalDataFilePath in historicalDataFiles)
         {
             string fullFileName = Path.GetFileName(historicalDataFilePath);
@@ -33,19 +34,23 @@ class Program
                 // Calcula taxa implicita
                 FutureCurve futureCurve = new FutureCurve(futurePrices, referenceDate, spotPrice, calendar);
                 Dictionary<DateTime, double> rates = futureCurve.Rates;
+                allRates.Add(referenceDate, rates);
 
                 // Realiza interpolação
                 CubicSplineInterpolation interpolation = new CubicSplineInterpolation(rates);
                 Dictionary<DateTime, double> interpolatedCurve = interpolation.InterpolateAll();
 
                 // Plota o gráfico
-                PlotGraph plot = new PlotGraph(interpolatedCurve, referenceDate);
-                plot.PlotCurve();
+                //PlotGraph plot = new PlotGraph(rates, referenceDate);
+                //plot.PlotCurve();
             }
             else
             {
                 Console.WriteLine($"FileName {fileName} has incorrect format.");
             }
         }
+        // Plota todas as curvas
+        PlotMultipleGraphs plotAll = new PlotMultipleGraphs(allRates);
+        plotAll.PlotCurve();
     }
 }
