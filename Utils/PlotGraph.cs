@@ -66,7 +66,7 @@ namespace Utils
 
     public class PlotMultipleGraphs
     {
-        private readonly Dictionary<DateTime, Dictionary<DateTime, double>> curves; // Lista de curvas
+        private readonly Dictionary<DateTime, Dictionary<DateTime, double>> curves;
 
         public PlotMultipleGraphs(Dictionary<DateTime, Dictionary<DateTime, double>> curves)
         {
@@ -77,14 +77,14 @@ namespace Utils
         {
             var plotModel = new PlotModel { Title = "Crypto Currency Rates Curve" };
 
-            // Configurar eixo X (Data)
-            plotModel.Axes.Add(new DateTimeAxis
+            // Configurar eixo X (Meses desde a data de referência)
+            plotModel.Axes.Add(new LinearAxis
             {
                 Position = AxisPosition.Bottom,
-                StringFormat = "dd/MM/yyyy",
-                Title = "Data",
-                IntervalType = DateTimeIntervalType.Days,
-                MajorGridlineStyle = LineStyle.Solid
+                Title = "Meses",
+                MajorGridlineStyle = LineStyle.Solid,
+                Minimum = 0, // Início em 0 meses
+                StringFormat = "0M" // Rótulos no formato "1M", "2M", etc.
             });
 
             // Configurar eixo Y (Taxas)
@@ -93,13 +93,14 @@ namespace Utils
                 Position = AxisPosition.Left,
                 Title = "Rate",
                 MajorGridlineStyle = LineStyle.Solid,
-                Minimum = -0.4,  // Limite inferior fixo
-                Maximum = 0.4    // Limite superior fixo
+                Minimum = -0.5, // Limite inferior fixo
+                Maximum = 0.5   // Limite superior fixo
             });
 
+            // Iterar sobre as curvas e adicionar séries
             foreach (var curve in curves)
             {
-                DateTime referenceDate = curve.Key;
+                DateTime referenceDate = curve.Key; // Data de referência para a curva
                 var lineSeries = new LineSeries
                 {
                     Title = $"{referenceDate:dd/MM}", // Nome único para cada série
@@ -108,9 +109,11 @@ namespace Utils
 
                 foreach (var point in curve.Value)
                 {
+                    // Calcular meses desde a data de referência
                     var monthsSinceBase = ((point.Key.Year - referenceDate.Year) * 12) + (point.Key.Month - referenceDate.Month);
                     lineSeries.Points.Add(new DataPoint(monthsSinceBase, point.Value));
                 }
+
                 plotModel.Series.Add(lineSeries);
             }
 
