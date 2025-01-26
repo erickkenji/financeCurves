@@ -41,8 +41,8 @@ class Program
                 Dictionary<DateTime, double> interpolatedCurve = interpolation.InterpolateAll();
 
                 // Plota o gráfico
-                //PlotGraph plot = new PlotGraph(rates, referenceDate);
-                //plot.PlotCurve();
+                PlotGraph plot = new PlotGraph(rates, referenceDate);
+                plot.PlotCurve();
             }
             else
             {
