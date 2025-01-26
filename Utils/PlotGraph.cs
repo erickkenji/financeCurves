@@ -26,7 +26,7 @@ namespace Utils
 
         public void PlotCurve()
         {
-            var plotModel = new PlotModel { Title = "Crypto Currency Rates Curve" };
+            var plotModel = new PlotModel { Title = $"Curva de juros de USDBTC - {this.referenceDate:dd-MM-yyyy}" };
 
             plotModel.Axes.Add(new DateTimeAxis
             {
@@ -40,7 +40,7 @@ namespace Utils
             plotModel.Axes.Add(new LinearAxis
             {
                 Position = AxisPosition.Left,
-                Title = "Rate",
+                Title = "Taxa",
                 MajorGridlineStyle = LineStyle.Solid,
                 Minimum = -0.4,  // Limite inferior fixo
                 Maximum = 0.4    // Limite superior fixo
@@ -75,7 +75,7 @@ namespace Utils
 
         public void PlotCurve()
         {
-            var plotModel = new PlotModel { Title = "Crypto Currency Rates Curve" };
+            var plotModel = new PlotModel { Title = "Curva de juros de USDBTC" };
 
             // Configurar eixo X (Meses desde a data de referência)
             plotModel.Axes.Add(new LinearAxis
@@ -91,10 +91,10 @@ namespace Utils
             plotModel.Axes.Add(new LinearAxis
             {
                 Position = AxisPosition.Left,
-                Title = "Rate",
+                Title = "Taxa",
                 MajorGridlineStyle = LineStyle.Solid,
-                Minimum = -0.5, // Limite inferior fixo
-                Maximum = 0.5   // Limite superior fixo
+                Minimum = -0.4, // Limite inferior fixo
+                Maximum = 0.4   // Limite superior fixo
             });
 
             // Iterar sobre as curvas e adicionar séries
