@@ -19,6 +19,7 @@ class Program
         string[] historicalDataFiles = Directory.GetFiles(historicalDataPath);
 
         Dictionary<DateTime, Dictionary<DateTime, double>> allRates = new Dictionary<DateTime, Dictionary<DateTime, double>>();
+        Dictionary<DateTime, Dictionary<DateTime, double>> allRatesInterpolated = new Dictionary<DateTime, Dictionary<DateTime, double>>();
         foreach (string historicalDataFilePath in historicalDataFiles)
         {
             string fullFileName = Path.GetFileName(historicalDataFilePath);
@@ -37,12 +38,16 @@ class Program
                 allRates.Add(referenceDate, rates);
 
                 // Realiza interpolação
-                CubicSplineInterpolation interpolation = new CubicSplineInterpolation(rates);
-                Dictionary<DateTime, double> interpolatedCurve = interpolation.InterpolateAll();
+                //CubicSplineInterpolation interpolation = new CubicSplineInterpolation(rates);
+                //Dictionary<DateTime, double> interpolatedCurve = interpolation.InterpolateAll();
+
+                SvenssonCurve svenssonCurve = new SvenssonCurve(rates);
+                Dictionary<DateTime, double> svenssonCurveResult = svenssonCurve.GetInterpolatedCurve();
+                allRatesInterpolated.Add(referenceDate, svenssonCurveResult);
 
                 // Plota o gráfico
-                PlotGraph plot = new PlotGraph(rates, referenceDate);
-                plot.PlotCurve();
+                PlotGraph plot = new PlotGraph(svenssonCurveResult, referenceDate);
+                plot.PlotCurveWithDates();
             }
             else
             {
@@ -50,7 +55,7 @@ class Program
             }
         }
         // Plota todas as curvas
-        PlotMultipleGraphs plotAll = new PlotMultipleGraphs(allRates);
+        PlotMultipleGraphs plotAll = new PlotMultipleGraphs(allRatesInterpolated);
         plotAll.PlotCurve();
     }
 }

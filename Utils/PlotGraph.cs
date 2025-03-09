@@ -24,7 +24,48 @@ namespace Utils
             this.referenceDate = referenceDate;
         }
 
-        public void PlotCurve()
+        public void PlotCurveWithDates()
+        {
+            var plotModel = new PlotModel { Title = $"Curva de juros de USDBTC - {this.referenceDate:dd-MM-yyyy}" };
+
+            // Configurar eixo X (Datas)
+            plotModel.Axes.Add(new DateTimeAxis
+            {
+                Position = AxisPosition.Bottom,
+                StringFormat = "MM/yy",
+                Title = "Data",
+                IntervalType = DateTimeIntervalType.Days,
+                MajorGridlineStyle = LineStyle.Solid
+            });
+
+            // Configurar eixo Y (Taxas)
+            plotModel.Axes.Add(new LinearAxis
+            {
+                Position = AxisPosition.Left,
+                Title = "Taxa",
+                MajorGridlineStyle = LineStyle.Solid,
+                Minimum = -0.4, // Limite inferior fixo
+                Maximum = 0.4   // Limite superior fixo
+            });
+
+            var lineSeries = new LineSeries { Title = "Data", MarkerType = MarkerType.Circle };
+
+            foreach (var point in this.curve)
+            {
+                lineSeries.Points.Add(new DataPoint(DateTimeAxis.ToDouble(point.Key), point.Value));
+            }
+
+            plotModel.Series.Add(lineSeries);
+
+            // Exportar o gráfico como SVG
+            var exporter = new SvgExporter { Width = 800, Height = 600 };
+            using (var stream = File.Create($"{referenceDate:dd-MM-yyyy}.svg"))
+            {
+                exporter.Export(plotModel, stream);
+            }
+        }
+
+        public void PlotCurveWithMonths()
         {
             var plotModel = new PlotModel { Title = $"Curva de juros de USDBTC - {this.referenceDate:dd-MM-yyyy}" };
 
