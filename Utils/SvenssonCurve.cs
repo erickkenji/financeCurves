@@ -27,7 +27,15 @@ public class SvenssonCurve
         var maturities = rates.Keys.Select(date => (date - DateTime.Today).TotalDays / 365.0).ToArray();
         var yields = rates.Values.ToArray();
 
-        double[] parameters = { 0.03, -0.02, 0.02, -0.01, 2.0, 5.0 };
+        double beta0 = rates.Values.Average();
+        double beta1 = (yields[1] - yields[0]) / Math.Log(maturities[1] / maturities[0]);
+        double beta2 = beta1 / 2;
+        double beta3 = 0; // Pode começar neutro para evitar distorção
+        double tau1 = maturities.Average() / 2;
+        double tau2 = maturities.Max();
+
+        double[] parameters = { beta0, beta1, beta2, beta3, tau1, tau2 };
+        //double[] parameters = { 0.03, -0.02, 0.02, -0.01, 2.0, 5.0 };
         NelderMeadOptimization(parameters, maturities, yields);
     }
 

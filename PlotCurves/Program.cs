@@ -11,6 +11,27 @@ using Utils;
 
 class Program
 {
+    private static Dictionary<DateTime, double> referenceDateFixingCollection = new Dictionary<DateTime, double>()
+    {
+        { new DateTime(2025, 01, 23), 103960.17},
+        { new DateTime(2025, 01, 22), 103653.07},
+        { new DateTime(2025, 01, 21), 106146.27},
+        { new DateTime(2025, 01, 17), 104463.04},
+        { new DateTime(2025, 01, 16), 99756.91},
+        { new DateTime(2025, 01, 15), 100504.49},
+        { new DateTime(2025, 01, 14), 96534.05},
+        { new DateTime(2025, 01, 13), 94516.52},
+        { new DateTime(2025, 01, 10), 940701.45},
+        { new DateTime(2025, 01, 09), 92484.04},
+        { new DateTime(2025, 01, 08), 95043.52},
+        { new DateTime(2025, 01, 07), 96922.70},
+        { new DateTime(2025, 01, 06), 102078.09},
+        { new DateTime(2025, 01, 03), 98107.43},
+        { new DateTime(2025, 01, 02), 96886.88},
+        { new DateTime(2024, 12, 31), 93429.20},
+        { new DateTime(2024, 12, 30), 92643.21}
+    };  
+
     static void Main(string[] args)
     {
         Calendar calendar = new UnitedStates(UnitedStates.Market.NYSE);
@@ -30,7 +51,8 @@ class Program
                 Dictionary<DateTime, double> futurePrices = ReadCsv.ReadCsvFile(historicalDataFilePath);
 
                 // Recupera preço spot
-                double spotPrice = MarketDataUtils.GetUSDBTCSpotPrice(referenceDate);
+                //double spotPrice = MarketDataUtils.GetUSDBTCSpotPrice(referenceDate);
+                double spotPrice = referenceDateFixingCollection.TryGetValue(referenceDate, out spotPrice) ? spotPrice : 0.0;
 
                 // Calcula taxa implicita
                 FutureCurve futureCurve = new FutureCurve(futurePrices, referenceDate, spotPrice, calendar);
@@ -41,14 +63,18 @@ class Program
                 //CubicSplineInterpolation interpolation = new CubicSplineInterpolation(rates);
                 //Dictionary<DateTime, double> interpolatedCurve = interpolation.InterpolateAll();
 
-                SvenssonCurve svenssonCurve = new SvenssonCurve(rates);
-                Dictionary<DateTime, double> svenssonCurveResult = svenssonCurve.GetInterpolatedCurve();
-                allRatesInterpolated.Add(referenceDate, svenssonCurveResult);
+                //SvenssonCurve svenssonCurve = new SvenssonCurve(rates);
+                //Dictionary<DateTime, double> svenssonCurveResult = svenssonCurve.GetInterpolatedCurve();
+                //allRatesInterpolated.Add(referenceDate, svenssonCurveResult);
+
+                NelsonSiegelCurve nelsonSiegelCurve = new NelsonSiegelCurve(rates);
+                Dictionary<DateTime, double> nelsonSiegelCurveResult = nelsonSiegelCurve.GetInterpolatedCurve();
+                allRatesInterpolated.Add(referenceDate, nelsonSiegelCurveResult);
 
                 // Plota o gráfico
-                PlotGraph plot = new PlotGraph(svenssonCurveResult, referenceDate);
+                PlotGraph plot = new PlotGraph(nelsonSiegelCurveResult, referenceDate);
                 plot.PlotCurveWithDates();
-            }
+            } 
             else
             {
                 Console.WriteLine($"FileName {fileName} has incorrect format.");
