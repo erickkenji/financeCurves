@@ -33,7 +33,7 @@ namespace Utils
             var yields = rates.Values.ToArray();
 
             this.beta0 = rates.Values.Average();
-            this.beta1 = (yields[1] - yields[0]) / Math.Log(maturities[1] / maturities[0]) * 0.1;
+            this.beta1 = (yields[1] - yields[0]) / Math.Log(maturities[1] / maturities[0]) * 0.2;
             this.beta2 = beta1 / 2;
             this.tau = maturities.Average() * 0.2;
 
