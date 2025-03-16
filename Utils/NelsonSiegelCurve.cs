@@ -8,11 +8,13 @@ namespace Utils
 {
     public class NelsonSiegelCurve
     {
-        private Dictionary<DateTime, double> rates;
+        private readonly Dictionary<DateTime, double> rates;
+        private readonly DateTime referenceDate;
         private double beta0, beta1, beta2, tau;
 
-        public NelsonSiegelCurve(Dictionary<DateTime, double> rates)
+        public NelsonSiegelCurve(DateTime referenceDate, Dictionary<DateTime, double> rates)
         {
+            this.referenceDate = referenceDate;
             this.rates = rates;
             FitCurve();
         }
@@ -27,13 +29,13 @@ namespace Utils
 
         private void FitCurve()
         {
-            var maturities = rates.Keys.Select(date => (date - DateTime.Today).TotalDays / 365.0).ToArray();
+            var maturities = rates.Keys.Select(date => (date - referenceDate).TotalDays / 365.0).ToArray();
             var yields = rates.Values.ToArray();
 
-            double beta0 = rates.Values.Average();  // Um bom chute inicial
-            double beta1 = (yields[1] - yields[0]) / Math.Log(maturities[1] / maturities[0]);  // Aproximação para a inclinação
-            double beta2 = beta1 / 2;  // Chute para a curvatura
-            double tau = maturities.Average();  // Chute inicial para tau, média das maturidades
+            this.beta0 = rates.Values.Average();
+            this.beta1 = (yields[1] - yields[0]) / Math.Log(maturities[1] / maturities[0]) * 0.1;
+            this.beta2 = beta1 / 2;
+            this.tau = maturities.Average() * 0.2;
 
             double[] parameters = { beta0, beta1, beta2, tau };
             NelderMeadOptimization(parameters, maturities, yields);
@@ -66,7 +68,7 @@ namespace Utils
 
         public double GetRate(DateTime date)
         {
-            double maturity = (date - DateTime.Today).TotalDays / 365.0;
+            double maturity = (date - referenceDate).TotalDays / 365.0;
             return NelsonSiegelFunction(maturity, beta0, beta1, beta2, tau);
         }
 

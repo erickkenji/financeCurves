@@ -67,7 +67,7 @@ class Program
                 //Dictionary<DateTime, double> svenssonCurveResult = svenssonCurve.GetInterpolatedCurve();
                 //allRatesInterpolated.Add(referenceDate, svenssonCurveResult);
 
-                NelsonSiegelCurve nelsonSiegelCurve = new NelsonSiegelCurve(rates);
+                NelsonSiegelCurve nelsonSiegelCurve = new NelsonSiegelCurve(referenceDate, rates);
                 Dictionary<DateTime, double> nelsonSiegelCurveResult = nelsonSiegelCurve.GetInterpolatedCurve();
                 allRatesInterpolated.Add(referenceDate, nelsonSiegelCurveResult);
 
