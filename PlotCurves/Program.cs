@@ -73,7 +73,7 @@ class Program
 
                 // Plota o gráfico
                 PlotGraph plot = new PlotGraph(nelsonSiegelCurveResult, referenceDate);
-                plot.PlotCurveWithDates();
+                plot.PlotCurveWithMonths();
             } 
             else
             {
