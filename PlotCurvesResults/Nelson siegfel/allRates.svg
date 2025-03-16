@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="800" height="600" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath id="clipPath1">
+      <rect x="0" y="0" width="800" height="600" />
+    </clipPath>
+  </defs>
+  <g clip-path="url(#clipPath1)">
+    <polyline points="64.3645,556.894 64.3645,560.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="80.1781,556.894 80.1781,560.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="95.9916,556.894 95.9916,560.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="127.6186,556.894 127.6186,560.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="143.4322,556.894 143.4322,560.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="159.2457,556.894 159.2457,560.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="190.8727,556.894 190.8727,560.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="206.6863,556.894 206.6863,560.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="222.4998,556.894 222.4998,560.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="254.1269,556.894 254.1269,560.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="269.9404,556.894 269.9404,560.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="285.7539,556.894 285.7539,560.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="317.381,556.894 317.381,560.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="333.1945,556.894 333.1945,560.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="349.008,556.894 349.008,560.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="380.6351,556.894 380.6351,560.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="396.4486,556.894 396.4486,560.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="412.2621,556.894 412.2621,560.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="443.8892,556.894 443.8892,560.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="459.7027,556.894 459.7027,560.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="475.5162,556.894 475.5162,560.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="507.1433,556.894 507.1433,560.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="522.9568,556.894 522.9568,560.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="538.7704,556.894 538.7704,560.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="570.3974,556.894 570.3974,560.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="586.2109,556.894 586.2109,560.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="602.0245,556.894 602.0245,560.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="633.6515,556.894 633.6515,560.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="649.4651,556.894 649.4651,560.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="665.2786,556.894 665.2786,560.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="696.9056,556.894 696.9056,560.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="712.7192,556.894 712.7192,560.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="728.5327,556.894 728.5327,560.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="760.1597,556.894 760.1597,560.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="775.9733,556.894 775.9733,560.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="48.551,543.8243 44.551,543.8243" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="48.551,530.7546 44.551,530.7546" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="48.551,517.6849 44.551,517.6849" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="48.551,504.6152 44.551,504.6152" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="48.551,478.4758 44.551,478.4758" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="48.551,465.4061 44.551,465.4061" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="48.551,452.3364 44.551,452.3364" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="48.551,439.2667 44.551,439.2667" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="48.551,413.1273 44.551,413.1273" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="48.551,400.0576 44.551,400.0576" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="48.551,386.9879 44.551,386.9879" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="48.551,373.9182 44.551,373.9182" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="48.551,347.7788 44.551,347.7788" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="48.551,334.7091 44.551,334.7091" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="48.551,321.6394 44.551,321.6394" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="48.551,308.5697 44.551,308.5697" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="48.551,282.4303 44.551,282.4303" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="48.551,269.3606 44.551,269.3606" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="48.551,256.2909 44.551,256.2909" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="48.551,243.2212 44.551,243.2212" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="48.551,217.0818 44.551,217.0818" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="48.551,204.0121 44.551,204.0121" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="48.551,190.9424 44.551,190.9424" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="48.551,177.8727 44.551,177.8727" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="48.551,151.7333 44.551,151.7333" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="48.551,138.6636 44.551,138.6636" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="48.551,125.5939 44.551,125.5939" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="48.551,112.5242 44.551,112.5242" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="48.551,86.3848 44.551,86.3848" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="48.551,73.3151 44.551,73.3151" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="48.551,60.2454 44.551,60.2454" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="48.551,47.1757 44.551,47.1757" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <text dominant-baseline="hanging" text-anchor="middle" transform="translate(48.551,567.894)" font-family="Segoe UI" font-size="12" font-weight="400" fill="black">0M</text>
+    <text dominant-baseline="hanging" text-anchor="middle" transform="translate(111.8051,567.894)" font-family="Segoe UI" font-size="12" font-weight="400" fill="black">2M</text>
+    <text dominant-baseline="hanging" text-anchor="middle" transform="translate(175.0592,567.894)" font-family="Segoe UI" font-size="12" font-weight="400" fill="black">4M</text>
+    <text dominant-baseline="hanging" text-anchor="middle" transform="translate(238.3133,567.894)" font-family="Segoe UI" font-size="12" font-weight="400" fill="black">6M</text>
+    <text dominant-baseline="hanging" text-anchor="middle" transform="translate(301.5674,567.894)" font-family="Segoe UI" font-size="12" font-weight="400" fill="black">8M</text>
+    <text dominant-baseline="hanging" text-anchor="middle" transform="translate(364.8216,567.894)" font-family="Segoe UI" font-size="12" font-weight="400" fill="black">10M</text>
+    <text dominant-baseline="hanging" text-anchor="middle" transform="translate(428.0757,567.894)" font-family="Segoe UI" font-size="12" font-weight="400" fill="black">12M</text>
+    <text dominant-baseline="hanging" text-anchor="middle" transform="translate(491.3298,567.894)" font-family="Segoe UI" font-size="12" font-weight="400" fill="black">14M</text>
+    <text dominant-baseline="hanging" text-anchor="middle" transform="translate(554.5839,567.894)" font-family="Segoe UI" font-size="12" font-weight="400" fill="black">16M</text>
+    <text dominant-baseline="hanging" text-anchor="middle" transform="translate(617.838,567.894)" font-family="Segoe UI" font-size="12" font-weight="400" fill="black">18M</text>
+    <text dominant-baseline="hanging" text-anchor="middle" transform="translate(681.0921,567.894)" font-family="Segoe UI" font-size="12" font-weight="400" fill="black">20M</text>
+    <text dominant-baseline="hanging" text-anchor="middle" transform="translate(744.3462,567.894)" font-family="Segoe UI" font-size="12" font-weight="400" fill="black">22M</text>
+    <polyline points="48.551,34.106 48.551,556.894" style="fill:none;stroke:rgb(0,0,0);stroke-width:1;stroke-opacity:0.25098039215686274" shape-rendering="crispEdges" />
+    <polyline points="111.8051,34.106 111.8051,556.894" style="fill:none;stroke:rgb(0,0,0);stroke-width:1;stroke-opacity:0.25098039215686274" shape-rendering="crispEdges" />
+    <polyline points="175.0592,34.106 175.0592,556.894" style="fill:none;stroke:rgb(0,0,0);stroke-width:1;stroke-opacity:0.25098039215686274" shape-rendering="crispEdges" />
+    <polyline points="238.3133,34.106 238.3133,556.894" style="fill:none;stroke:rgb(0,0,0);stroke-width:1;stroke-opacity:0.25098039215686274" shape-rendering="crispEdges" />
+    <polyline points="301.5674,34.106 301.5674,556.894" style="fill:none;stroke:rgb(0,0,0);stroke-width:1;stroke-opacity:0.25098039215686274" shape-rendering="crispEdges" />
+    <polyline points="364.8216,34.106 364.8216,556.894" style="fill:none;stroke:rgb(0,0,0);stroke-width:1;stroke-opacity:0.25098039215686274" shape-rendering="crispEdges" />
+    <polyline points="428.0757,34.106 428.0757,556.894" style="fill:none;stroke:rgb(0,0,0);stroke-width:1;stroke-opacity:0.25098039215686274" shape-rendering="crispEdges" />
+    <polyline points="491.3298,34.106 491.3298,556.894" style="fill:none;stroke:rgb(0,0,0);stroke-width:1;stroke-opacity:0.25098039215686274" shape-rendering="crispEdges" />
+    <polyline points="554.5839,34.106 554.5839,556.894" style="fill:none;stroke:rgb(0,0,0);stroke-width:1;stroke-opacity:0.25098039215686274" shape-rendering="crispEdges" />
+    <polyline points="617.838,34.106 617.838,556.894" style="fill:none;stroke:rgb(0,0,0);stroke-width:1;stroke-opacity:0.25098039215686274" shape-rendering="crispEdges" />
+    <polyline points="681.0921,34.106 681.0921,556.894" style="fill:none;stroke:rgb(0,0,0);stroke-width:1;stroke-opacity:0.25098039215686274" shape-rendering="crispEdges" />
+    <polyline points="744.3462,34.106 744.3462,556.894" style="fill:none;stroke:rgb(0,0,0);stroke-width:1;stroke-opacity:0.25098039215686274" shape-rendering="crispEdges" />
+    <polyline points="48.551,556.894 48.551,563.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="111.8051,556.894 111.8051,563.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="175.0592,556.894 175.0592,563.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="238.3133,556.894 238.3133,563.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="301.5674,556.894 301.5674,563.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="364.8216,556.894 364.8216,563.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="428.0757,556.894 428.0757,563.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="491.3298,556.894 491.3298,563.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="554.5839,556.894 554.5839,563.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="617.838,556.894 617.838,563.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="681.0921,556.894 681.0921,563.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="744.3462,556.894 744.3462,563.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <text dominant-baseline="baseline" text-anchor="middle" transform="translate(415.8993,588)" font-family="Segoe UI" font-size="12" font-weight="400" fill="black">Meses</text>
+    <text dominant-baseline="middle" text-anchor="end" transform="translate(37.551,556.894)" font-family="Segoe UI" font-size="12" font-weight="400" fill="black">-0.4</text>
+    <text dominant-baseline="middle" text-anchor="end" transform="translate(37.551,491.5455)" font-family="Segoe UI" font-size="12" font-weight="400" fill="black">-0.3</text>
+    <text dominant-baseline="middle" text-anchor="end" transform="translate(37.551,426.197)" font-family="Segoe UI" font-size="12" font-weight="400" fill="black">-0.2</text>
+    <text dominant-baseline="middle" text-anchor="end" transform="translate(37.551,360.8485)" font-family="Segoe UI" font-size="12" font-weight="400" fill="black">-0.1</text>
+    <text dominant-baseline="middle" text-anchor="end" transform="translate(37.551,295.5)" font-family="Segoe UI" font-size="12" font-weight="400" fill="black">0</text>
+    <text dominant-baseline="middle" text-anchor="end" transform="translate(37.551,230.1515)" font-family="Segoe UI" font-size="12" font-weight="400" fill="black">0.1</text>
+    <text dominant-baseline="middle" text-anchor="end" transform="translate(37.551,164.803)" font-family="Segoe UI" font-size="12" font-weight="400" fill="black">0.2</text>
+    <text dominant-baseline="middle" text-anchor="end" transform="translate(37.551,99.4545)" font-family="Segoe UI" font-size="12" font-weight="400" fill="black">0.3</text>
+    <text dominant-baseline="middle" text-anchor="end" transform="translate(37.551,34.106)" font-family="Segoe UI" font-size="12" font-weight="400" fill="black">0.4</text>
+    <polyline points="48.551,556.894 783.2475,556.894" style="fill:none;stroke:rgb(0,0,0);stroke-width:1;stroke-opacity:0.25098039215686274" shape-rendering="crispEdges" />
+    <polyline points="48.551,491.5455 783.2475,491.5455" style="fill:none;stroke:rgb(0,0,0);stroke-width:1;stroke-opacity:0.25098039215686274" shape-rendering="crispEdges" />
+    <polyline points="48.551,426.197 783.2475,426.197" style="fill:none;stroke:rgb(0,0,0);stroke-width:1;stroke-opacity:0.25098039215686274" shape-rendering="crispEdges" />
+    <polyline points="48.551,360.8485 783.2475,360.8485" style="fill:none;stroke:rgb(0,0,0);stroke-width:1;stroke-opacity:0.25098039215686274" shape-rendering="crispEdges" />
+    <polyline points="48.551,295.5 783.2475,295.5" style="fill:none;stroke:rgb(0,0,0);stroke-width:1;stroke-opacity:0.25098039215686274" shape-rendering="crispEdges" />
+    <polyline points="48.551,230.1515 783.2475,230.1515" style="fill:none;stroke:rgb(0,0,0);stroke-width:1;stroke-opacity:0.25098039215686274" shape-rendering="crispEdges" />
+    <polyline points="48.551,164.803 783.2475,164.803" style="fill:none;stroke:rgb(0,0,0);stroke-width:1;stroke-opacity:0.25098039215686274" shape-rendering="crispEdges" />
+    <polyline points="48.551,99.4545 783.2475,99.4545" style="fill:none;stroke:rgb(0,0,0);stroke-width:1;stroke-opacity:0.25098039215686274" shape-rendering="crispEdges" />
+    <polyline points="48.551,34.106 783.2475,34.106" style="fill:none;stroke:rgb(0,0,0);stroke-width:1;stroke-opacity:0.25098039215686274" shape-rendering="crispEdges" />
+    <polyline points="48.551,556.894 41.551,556.894" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="48.551,491.5455 41.551,491.5455" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="48.551,426.197 41.551,426.197" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="48.551,360.8485 41.551,360.8485" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="48.551,295.5 41.551,295.5" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="48.551,230.1515 41.551,230.1515" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="48.551,164.803 41.551,164.803" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="48.551,99.4545 41.551,99.4545" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="48.551,34.106 41.551,34.106" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <text dominant-baseline="hanging" text-anchor="middle" transform="translate(12,295.5) rotate(-90)" font-family="Segoe UI" font-size="12" font-weight="400" fill="black">Taxa</text>
+  </g>
+  <defs>
+    <clipPath id="clipPath2">
+      <rect x="48.551" y="34.106" width="734.6965" height="522.788" />
+    </clipPath>
+  </defs>
+  <g clip-path="url(#clipPath2)">
+    <polyline points="48.551,447.9787 80.1781,430.5569 111.8051,413.9161 143.4322,400.057 175.0592,388.0653 206.6863,377.3364 301.5674,353.1231 396.4486,336.8425 491.3298,325.7669 586.2109,317.7283 775.9733,307.2274" style="fill:none;stroke:rgb(78,154,6);stroke-width:2;stroke-linejoin:bevel" />
+    <ellipse cx="48.551" cy="447.9787" rx="3" ry="3" style="fill:rgb(78,154,6);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="80.1781" cy="430.5569" rx="3" ry="3" style="fill:rgb(78,154,6);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="111.8051" cy="413.9161" rx="3" ry="3" style="fill:rgb(78,154,6);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="143.4322" cy="400.057" rx="3" ry="3" style="fill:rgb(78,154,6);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="175.0592" cy="388.0653" rx="3" ry="3" style="fill:rgb(78,154,6);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="206.6863" cy="377.3364" rx="3" ry="3" style="fill:rgb(78,154,6);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="301.5674" cy="353.1231" rx="3" ry="3" style="fill:rgb(78,154,6);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="396.4486" cy="336.8425" rx="3" ry="3" style="fill:rgb(78,154,6);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="491.3298" cy="325.7669" rx="3" ry="3" style="fill:rgb(78,154,6);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="586.2109" cy="317.7283" rx="3" ry="3" style="fill:rgb(78,154,6);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="775.9733" cy="307.2274" rx="3" ry="3" style="fill:rgb(78,154,6);stroke:none;" shape-rendering="geometricPrecision" />
+    <polyline points="48.551,430.0345 80.1781,419.8719 111.8051,409.3028 143.4322,399.7386 175.0592,390.803 206.6863,382.1997 301.5674,360.1052 396.4486,342.4354 491.3298,328.599 586.2109,317.3588 775.9733,300.7848" style="fill:none;stroke:rgb(200,141,0);stroke-width:2;stroke-linejoin:bevel" />
+    <ellipse cx="48.551" cy="430.0345" rx="3" ry="3" style="fill:rgb(200,141,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="80.1781" cy="419.8719" rx="3" ry="3" style="fill:rgb(200,141,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="111.8051" cy="409.3028" rx="3" ry="3" style="fill:rgb(200,141,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="143.4322" cy="399.7386" rx="3" ry="3" style="fill:rgb(200,141,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="175.0592" cy="390.803" rx="3" ry="3" style="fill:rgb(200,141,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="206.6863" cy="382.1997" rx="3" ry="3" style="fill:rgb(200,141,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="301.5674" cy="360.1052" rx="3" ry="3" style="fill:rgb(200,141,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="396.4486" cy="342.4354" rx="3" ry="3" style="fill:rgb(200,141,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="491.3298" cy="328.599" rx="3" ry="3" style="fill:rgb(200,141,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="586.2109" cy="317.3588" rx="3" ry="3" style="fill:rgb(200,141,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="775.9733" cy="300.7848" rx="3" ry="3" style="fill:rgb(200,141,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <polyline points="48.551,424.0799 80.1781,414.8627 111.8051,405.2047 143.4322,396.3976 175.0592,388.1075 206.6863,380.0658 301.5674,359.116 396.4486,342.0107 491.3298,328.3618 586.2109,317.0857 775.9733,300.1068" style="fill:none;stroke:rgb(204,0,0);stroke-width:2;stroke-linejoin:bevel" />
+    <ellipse cx="48.551" cy="424.0799" rx="3" ry="3" style="fill:rgb(204,0,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="80.1781" cy="414.8627" rx="3" ry="3" style="fill:rgb(204,0,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="111.8051" cy="405.2047" rx="3" ry="3" style="fill:rgb(204,0,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="143.4322" cy="396.3976" rx="3" ry="3" style="fill:rgb(204,0,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="175.0592" cy="388.1075" rx="3" ry="3" style="fill:rgb(204,0,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="206.6863" cy="380.0658" rx="3" ry="3" style="fill:rgb(204,0,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="301.5674" cy="359.116" rx="3" ry="3" style="fill:rgb(204,0,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="396.4486" cy="342.0107" rx="3" ry="3" style="fill:rgb(204,0,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="491.3298" cy="328.3618" rx="3" ry="3" style="fill:rgb(204,0,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="586.2109" cy="317.0857" rx="3" ry="3" style="fill:rgb(204,0,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="775.9733" cy="300.1068" rx="3" ry="3" style="fill:rgb(204,0,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <polyline points="48.551,290.5472 80.1781,328.0873 111.8051,351.0203 143.4322,361.4565 175.0592,364.8475 206.6863,363.9881 301.5674,351.2841 396.4486,337.0188 491.3298,326.0412 586.2109,317.9007 775.9733,307.4415" style="fill:none;stroke:rgb(32,74,135);stroke-width:2;stroke-linejoin:bevel" />
+    <ellipse cx="48.551" cy="290.5472" rx="3" ry="3" style="fill:rgb(32,74,135);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="80.1781" cy="328.0873" rx="3" ry="3" style="fill:rgb(32,74,135);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="111.8051" cy="351.0203" rx="3" ry="3" style="fill:rgb(32,74,135);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="143.4322" cy="361.4565" rx="3" ry="3" style="fill:rgb(32,74,135);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="175.0592" cy="364.8475" rx="3" ry="3" style="fill:rgb(32,74,135);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="206.6863" cy="363.9881" rx="3" ry="3" style="fill:rgb(32,74,135);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="301.5674" cy="351.2841" rx="3" ry="3" style="fill:rgb(32,74,135);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="396.4486" cy="337.0188" rx="3" ry="3" style="fill:rgb(32,74,135);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="491.3298" cy="326.0412" rx="3" ry="3" style="fill:rgb(32,74,135);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="586.2109" cy="317.9007" rx="3" ry="3" style="fill:rgb(32,74,135);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="775.9733" cy="307.4415" rx="3" ry="3" style="fill:rgb(32,74,135);stroke:none;" shape-rendering="geometricPrecision" />
+    <polyline points="48.551,221.844 80.1781,263.4728 111.8051,292.9619 143.4322,311.2756 175.0592,323.3984 206.6863,331.8539 301.5674,344.7794 396.4486,350.2348 491.3298,353.0509 586.2109,354.8008 775.9733,356.8502" style="fill:none;stroke:rgb(255,0,0);stroke-width:2;stroke-linejoin:bevel" />
+    <ellipse cx="48.551" cy="221.844" rx="3" ry="3" style="fill:rgb(255,0,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="80.1781" cy="263.4728" rx="3" ry="3" style="fill:rgb(255,0,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="111.8051" cy="292.9619" rx="3" ry="3" style="fill:rgb(255,0,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="143.4322" cy="311.2756" rx="3" ry="3" style="fill:rgb(255,0,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="175.0592" cy="323.3984" rx="3" ry="3" style="fill:rgb(255,0,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="206.6863" cy="331.8539" rx="3" ry="3" style="fill:rgb(255,0,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="301.5674" cy="344.7794" rx="3" ry="3" style="fill:rgb(255,0,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="396.4486" cy="350.2348" rx="3" ry="3" style="fill:rgb(255,0,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="491.3298" cy="353.0509" rx="3" ry="3" style="fill:rgb(255,0,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="586.2109" cy="354.8008" rx="3" ry="3" style="fill:rgb(255,0,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="775.9733" cy="356.8502" rx="3" ry="3" style="fill:rgb(255,0,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <polyline points="48.551,243.066 80.1781,312.9296 111.8051,348.7012 143.4322,361.6337 175.0592,364.0725 206.6863,361.5218 301.5674,347.1776 396.4486,335.7588 491.3298,328.5636 586.2109,323.8034 775.9733,318.1132" style="fill:none;stroke:rgb(255,165,0);stroke-width:2;stroke-linejoin:bevel" />
+    <ellipse cx="48.551" cy="243.066" rx="3" ry="3" style="fill:rgb(255,165,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="80.1781" cy="312.9296" rx="3" ry="3" style="fill:rgb(255,165,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="111.8051" cy="348.7012" rx="3" ry="3" style="fill:rgb(255,165,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="143.4322" cy="361.6337" rx="3" ry="3" style="fill:rgb(255,165,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="175.0592" cy="364.0725" rx="3" ry="3" style="fill:rgb(255,165,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="206.6863" cy="361.5218" rx="3" ry="3" style="fill:rgb(255,165,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="301.5674" cy="347.1776" rx="3" ry="3" style="fill:rgb(255,165,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="396.4486" cy="335.7588" rx="3" ry="3" style="fill:rgb(255,165,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="491.3298" cy="328.5636" rx="3" ry="3" style="fill:rgb(255,165,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="586.2109" cy="323.8034" rx="3" ry="3" style="fill:rgb(255,165,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="775.9733" cy="318.1132" rx="3" ry="3" style="fill:rgb(255,165,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <polyline points="48.551,-115571.1736 80.1781,-131560.1153 111.8051,-100557.1127 143.4322,-77009.673 175.0592,-62706.8076 206.6863,-53960.4882 301.5674,-42669.7323 396.4486,-38406.0989 491.3298,-36231.0391 586.2109,-34876.9277 775.9733,-33288.4788" style="fill:none;stroke:rgb(255,255,0);stroke-width:2;stroke-linejoin:bevel" />
+    <ellipse cx="48.551" cy="-115571.1736" rx="3" ry="3" style="fill:rgb(255,255,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="80.1781" cy="-131560.1153" rx="3" ry="3" style="fill:rgb(255,255,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="111.8051" cy="-100557.1127" rx="3" ry="3" style="fill:rgb(255,255,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="143.4322" cy="-77009.673" rx="3" ry="3" style="fill:rgb(255,255,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="175.0592" cy="-62706.8076" rx="3" ry="3" style="fill:rgb(255,255,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="206.6863" cy="-53960.4882" rx="3" ry="3" style="fill:rgb(255,255,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="301.5674" cy="-42669.7323" rx="3" ry="3" style="fill:rgb(255,255,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="396.4486" cy="-38406.0989" rx="3" ry="3" style="fill:rgb(255,255,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="491.3298" cy="-36231.0391" rx="3" ry="3" style="fill:rgb(255,255,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="586.2109" cy="-34876.9277" rx="3" ry="3" style="fill:rgb(255,255,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="775.9733" cy="-33288.4788" rx="3" ry="3" style="fill:rgb(255,255,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <polyline points="48.551,188.2842 80.1781,278.7833 111.8051,329.747 143.4322,351.7905 175.0592,359.5927 206.6863,360.0222 301.5674,347.32 396.4486,334.4104 491.3298,325.6866 586.2109,319.7547 775.9733,312.5783" style="fill:none;stroke:rgb(0,128,0);stroke-width:2;stroke-linejoin:bevel" />
+    <ellipse cx="48.551" cy="188.2842" rx="3" ry="3" style="fill:rgb(0,128,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="80.1781" cy="278.7833" rx="3" ry="3" style="fill:rgb(0,128,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="111.8051" cy="329.747" rx="3" ry="3" style="fill:rgb(0,128,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="143.4322" cy="351.7905" rx="3" ry="3" style="fill:rgb(0,128,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="175.0592" cy="359.5927" rx="3" ry="3" style="fill:rgb(0,128,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="206.6863" cy="360.0222" rx="3" ry="3" style="fill:rgb(0,128,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="301.5674" cy="347.32" rx="3" ry="3" style="fill:rgb(0,128,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="396.4486" cy="334.4104" rx="3" ry="3" style="fill:rgb(0,128,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="491.3298" cy="325.6866" rx="3" ry="3" style="fill:rgb(0,128,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="586.2109" cy="319.7547" rx="3" ry="3" style="fill:rgb(0,128,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="775.9733" cy="312.5783" rx="3" ry="3" style="fill:rgb(0,128,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <polyline points="48.551,372.3056 80.1781,376.1354 111.8051,378.6214 143.4322,379.6054 175.0592,379.4708 206.6863,378.401 301.5674,371.5202 396.4486,361.7832 491.3298,351.5135 586.2109,341.4264 775.9733,323.6289" style="fill:none;stroke:rgb(0,0,255);stroke-width:2;stroke-linejoin:bevel" />
+    <ellipse cx="48.551" cy="372.3056" rx="3" ry="3" style="fill:rgb(0,0,255);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="80.1781" cy="376.1354" rx="3" ry="3" style="fill:rgb(0,0,255);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="111.8051" cy="378.6214" rx="3" ry="3" style="fill:rgb(0,0,255);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="143.4322" cy="379.6054" rx="3" ry="3" style="fill:rgb(0,0,255);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="175.0592" cy="379.4708" rx="3" ry="3" style="fill:rgb(0,0,255);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="206.6863" cy="378.401" rx="3" ry="3" style="fill:rgb(0,0,255);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="301.5674" cy="371.5202" rx="3" ry="3" style="fill:rgb(0,0,255);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="396.4486" cy="361.7832" rx="3" ry="3" style="fill:rgb(0,0,255);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="491.3298" cy="351.5135" rx="3" ry="3" style="fill:rgb(0,0,255);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="586.2109" cy="341.4264" rx="3" ry="3" style="fill:rgb(0,0,255);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="775.9733" cy="323.6289" rx="3" ry="3" style="fill:rgb(0,0,255);stroke:none;" shape-rendering="geometricPrecision" />
+    <polyline points="48.551,200.9346 80.1781,324.0951 111.8051,354.3371 143.4322,357.1178 175.0592,354.842 206.6863,352.2024 301.5674,347.6535 396.4486,345.7599 491.3298,344.7883 586.2109,344.1833 775.9733,343.4736" style="fill:none;stroke:rgb(75,0,130);stroke-width:2;stroke-linejoin:bevel" />
+    <ellipse cx="48.551" cy="200.9346" rx="3" ry="3" style="fill:rgb(75,0,130);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="80.1781" cy="324.0951" rx="3" ry="3" style="fill:rgb(75,0,130);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="111.8051" cy="354.3371" rx="3" ry="3" style="fill:rgb(75,0,130);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="143.4322" cy="357.1178" rx="3" ry="3" style="fill:rgb(75,0,130);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="175.0592" cy="354.842" rx="3" ry="3" style="fill:rgb(75,0,130);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="206.6863" cy="352.2024" rx="3" ry="3" style="fill:rgb(75,0,130);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="301.5674" cy="347.6535" rx="3" ry="3" style="fill:rgb(75,0,130);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="396.4486" cy="345.7599" rx="3" ry="3" style="fill:rgb(75,0,130);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="491.3298" cy="344.7883" rx="3" ry="3" style="fill:rgb(75,0,130);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="586.2109" cy="344.1833" rx="3" ry="3" style="fill:rgb(75,0,130);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="775.9733" cy="343.4736" rx="3" ry="3" style="fill:rgb(75,0,130);stroke:none;" shape-rendering="geometricPrecision" />
+    <polyline points="48.551,508.482 80.1781,451.1383 111.8051,414.6861 143.4322,394.1248 175.0592,381.5138 206.6863,373.2233 301.5674,361.3155 396.4486,356.4729 491.3298,353.9751 586.2109,352.4182 775.9733,350.5915" style="fill:none;stroke:rgb(238,130,238);stroke-width:2;stroke-linejoin:bevel" />
+    <ellipse cx="48.551" cy="508.482" rx="3" ry="3" style="fill:rgb(238,130,238);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="80.1781" cy="451.1383" rx="3" ry="3" style="fill:rgb(238,130,238);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="111.8051" cy="414.6861" rx="3" ry="3" style="fill:rgb(238,130,238);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="143.4322" cy="394.1248" rx="3" ry="3" style="fill:rgb(238,130,238);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="175.0592" cy="381.5138" rx="3" ry="3" style="fill:rgb(238,130,238);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="206.6863" cy="373.2233" rx="3" ry="3" style="fill:rgb(238,130,238);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="301.5674" cy="361.3155" rx="3" ry="3" style="fill:rgb(238,130,238);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="396.4486" cy="356.4729" rx="3" ry="3" style="fill:rgb(238,130,238);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="491.3298" cy="353.9751" rx="3" ry="3" style="fill:rgb(238,130,238);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="586.2109" cy="352.4182" rx="3" ry="3" style="fill:rgb(238,130,238);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="775.9733" cy="350.5915" rx="3" ry="3" style="fill:rgb(238,130,238);stroke:none;" shape-rendering="geometricPrecision" />
+    <polyline points="48.551,491.2459 80.1781,450.6196 111.8051,420.6009 143.4322,401.1232 175.0592,387.6815 206.6863,377.9265 301.5674,362.0879 396.4486,354.9303 491.3298,351.122 586.2109,348.7305 775.9733,345.9199" style="fill:none;stroke:rgb(78,154,6);stroke-width:2;stroke-linejoin:bevel;stroke-dasharray:4,1" />
+    <ellipse cx="48.551" cy="491.2459" rx="3" ry="3" style="fill:rgb(78,154,6);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="80.1781" cy="450.6196" rx="3" ry="3" style="fill:rgb(78,154,6);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="111.8051" cy="420.6009" rx="3" ry="3" style="fill:rgb(78,154,6);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="143.4322" cy="401.1232" rx="3" ry="3" style="fill:rgb(78,154,6);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="175.0592" cy="387.6815" rx="3" ry="3" style="fill:rgb(78,154,6);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="206.6863" cy="377.9265" rx="3" ry="3" style="fill:rgb(78,154,6);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="301.5674" cy="362.0879" rx="3" ry="3" style="fill:rgb(78,154,6);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="396.4486" cy="354.9303" rx="3" ry="3" style="fill:rgb(78,154,6);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="491.3298" cy="351.122" rx="3" ry="3" style="fill:rgb(78,154,6);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="586.2109" cy="348.7305" rx="3" ry="3" style="fill:rgb(78,154,6);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="775.9733" cy="345.9199" rx="3" ry="3" style="fill:rgb(78,154,6);stroke:none;" shape-rendering="geometricPrecision" />
+    <polyline points="48.551,369.9204 80.1781,376.0571 111.8051,380.0311 143.4322,381.6987 175.0592,381.741 206.6863,380.5079 301.5674,372.2723 396.4486,361.2049 491.3298,350.2662 586.2109,340.1759 775.9733,323.784" style="fill:none;stroke:rgb(200,141,0);stroke-width:2;stroke-linejoin:bevel;stroke-dasharray:4,1" />
+    <ellipse cx="48.551" cy="369.9204" rx="3" ry="3" style="fill:rgb(200,141,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="80.1781" cy="376.0571" rx="3" ry="3" style="fill:rgb(200,141,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="111.8051" cy="380.0311" rx="3" ry="3" style="fill:rgb(200,141,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="143.4322" cy="381.6987" rx="3" ry="3" style="fill:rgb(200,141,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="175.0592" cy="381.741" rx="3" ry="3" style="fill:rgb(200,141,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="206.6863" cy="380.5079" rx="3" ry="3" style="fill:rgb(200,141,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="301.5674" cy="372.2723" rx="3" ry="3" style="fill:rgb(200,141,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="396.4486" cy="361.2049" rx="3" ry="3" style="fill:rgb(200,141,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="491.3298" cy="350.2662" rx="3" ry="3" style="fill:rgb(200,141,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="586.2109" cy="340.1759" rx="3" ry="3" style="fill:rgb(200,141,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="775.9733" cy="323.784" rx="3" ry="3" style="fill:rgb(200,141,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <polyline points="48.551,479.6985 80.1781,459.3578 111.8051,440.0284 143.4322,424.0129 175.0592,410.2229 206.6863,397.9439 301.5674,370.4683 396.4486,352.2127 491.3298,339.9136 586.2109,331.055 775.9733,319.5718" style="fill:none;stroke:rgb(204,0,0);stroke-width:2;stroke-linejoin:bevel;stroke-dasharray:4,1" />
+    <ellipse cx="48.551" cy="479.6985" rx="3" ry="3" style="fill:rgb(204,0,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="80.1781" cy="459.3578" rx="3" ry="3" style="fill:rgb(204,0,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="111.8051" cy="440.0284" rx="3" ry="3" style="fill:rgb(204,0,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="143.4322" cy="424.0129" rx="3" ry="3" style="fill:rgb(204,0,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="175.0592" cy="410.2229" rx="3" ry="3" style="fill:rgb(204,0,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="206.6863" cy="397.9439" rx="3" ry="3" style="fill:rgb(204,0,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="301.5674" cy="370.4683" rx="3" ry="3" style="fill:rgb(204,0,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="396.4486" cy="352.2127" rx="3" ry="3" style="fill:rgb(204,0,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="491.3298" cy="339.9136" rx="3" ry="3" style="fill:rgb(204,0,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="586.2109" cy="331.055" rx="3" ry="3" style="fill:rgb(204,0,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="775.9733" cy="319.5718" rx="3" ry="3" style="fill:rgb(204,0,0);stroke:none;" shape-rendering="geometricPrecision" />
+    <polyline points="48.551,90.8955 80.1781,287.3373 111.8051,336.4096 143.4322,348.9654 175.0592,353.4969 206.6863,355.6618 301.5674,358.1308 396.4486,359.0343 491.3298,359.4949 586.2109,359.7816 775.9733,360.1179" style="fill:none;stroke:rgb(32,74,135);stroke-width:2;stroke-linejoin:bevel;stroke-dasharray:4,1" />
+    <ellipse cx="48.551" cy="90.8955" rx="3" ry="3" style="fill:rgb(32,74,135);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="80.1781" cy="287.3373" rx="3" ry="3" style="fill:rgb(32,74,135);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="111.8051" cy="336.4096" rx="3" ry="3" style="fill:rgb(32,74,135);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="143.4322" cy="348.9654" rx="3" ry="3" style="fill:rgb(32,74,135);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="175.0592" cy="353.4969" rx="3" ry="3" style="fill:rgb(32,74,135);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="206.6863" cy="355.6618" rx="3" ry="3" style="fill:rgb(32,74,135);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="301.5674" cy="358.1308" rx="3" ry="3" style="fill:rgb(32,74,135);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="396.4486" cy="359.0343" rx="3" ry="3" style="fill:rgb(32,74,135);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="491.3298" cy="359.4949" rx="3" ry="3" style="fill:rgb(32,74,135);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="586.2109" cy="359.7816" rx="3" ry="3" style="fill:rgb(32,74,135);stroke:none;" shape-rendering="geometricPrecision" />
+    <ellipse cx="775.9733" cy="360.1179" rx="3" ry="3" style="fill:rgb(32,74,135);stroke:none;" shape-rendering="geometricPrecision" />
+  </g>
+  <defs>
+    <clipPath id="clipPath3">
+      <rect x="0" y="0" width="800" height="600" />
+    </clipPath>
+  </defs>
+  <g clip-path="url(#clipPath3)">
+    <text dominant-baseline="hanging" text-anchor="middle" transform="translate(415.8993,8)" font-family="Segoe UI" font-size="18" font-weight="700" fill="black">Curva de juros de USDBTC</text>
+    <rect x="48.551" y="34.106" width="734.6965" height="522.788" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+  </g>
+</svg>
