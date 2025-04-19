@@ -33,9 +33,9 @@ namespace Utils
             var yields = rates.Values.ToArray();
 
             this.beta0 = rates.Values.Average();
-            this.beta1 = (yields[1] - yields[0]) / Math.Log(maturities[1] / maturities[0]) * 0.2;
+            this.beta1 = (yields[1] - yields[0]) / Math.Log(maturities[1] / maturities[0]) * 0.1;
             this.beta2 = beta1 / 2;
-            this.tau = maturities.Average() * 0.2;
+            this.tau = maturities.Average() * 0.1;
 
             double[] parameters = { beta0, beta1, beta2, tau };
             NelderMeadOptimization(parameters, maturities, yields);
@@ -72,9 +72,25 @@ namespace Utils
             return NelsonSiegelFunction(maturity, beta0, beta1, beta2, tau);
         }
 
+        /*
         public Dictionary<DateTime, double> GetInterpolatedCurve()
         {
             return rates.Keys.ToDictionary(date => date, date => GetRate(date));
+        }
+        */
+
+        public Dictionary<DateTime, double> GetInterpolatedCurve()
+        {
+            DateTime startDate = rates.Keys.Min();
+            DateTime endDate = rates.Keys.Max();
+
+            List<DateTime> allDates = new List<DateTime>();
+            for (DateTime currentDate = startDate; currentDate <= endDate; currentDate = currentDate.AddDays(1))
+            {
+                allDates.Add(currentDate);
+            }
+
+            return allDates.ToDictionary(date => date, date => GetRate(date));
         }
     }
 }
