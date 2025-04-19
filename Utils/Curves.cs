@@ -23,23 +23,33 @@ namespace Utils
         public Dictionary<DateTime, double> Factors { get; private set; }
         public DateTime ReferenceDate { get; private set; }
         public Calendar Calendar { get; private set; }
+        public double SpotPrice { get; private set; }
+        public bool SinglePlot { get; private set; }
 
-        public FutureCurve(Dictionary<DateTime, double> factors, DateTime referenceDate, double spotPrice, Calendar calendar)
+        public FutureCurve(Dictionary<DateTime, double> factors, DateTime referenceDate, double spotPrice, Calendar calendar, bool singlePlot)
         {
             this.Factors = factors;
             this.ReferenceDate = referenceDate;
+            this.SpotPrice = spotPrice;
+            this.Calendar = calendar;
+            this.SinglePlot = singlePlot;
 
             // Calcula taxa implicita do fator
             Dictionary<DateTime, double> rates = new Dictionary<DateTime, double>() { };
-            foreach (KeyValuePair<DateTime, double> kvp in factors)
+            foreach (KeyValuePair<DateTime, double> kvp in this.Factors)
             {
-                double priceFactor = (spotPrice - kvp.Value) / kvp.Value;
-                double periods = 365 / calendar.businessDaysBetween(QuantLibUtils_.GetQuantLibDateFromDateTime(referenceDate), QuantLibUtils_.GetQuantLibDateFromDateTime(kvp.Key));
+                double priceFactor = (this.SpotPrice - kvp.Value) / kvp.Value;
+                double periods = 365 / this.Calendar.businessDaysBetween(QuantLibUtils_.GetQuantLibDateFromDateTime(this.ReferenceDate), QuantLibUtils_.GetQuantLibDateFromDateTime(kvp.Key));
                 double implicitRate = priceFactor * periods;
 
                 rates.Add(kvp.Key, implicitRate);
             }
             this.Rates = rates;
+        }
+
+        public StandardCurve GetStandardCurve()
+        {
+            return new StandardCurve(this.ReferenceDate, this.Rates, this.SinglePlot);
         }
     }
 

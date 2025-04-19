@@ -39,41 +39,52 @@ class Program
         string historicalDataPath = Path.Combine(Directory.GetCurrentDirectory(), "..", "..", "..", "..", "HistoricalData");
         string[] historicalDataFiles = Directory.GetFiles(historicalDataPath);
 
-        Dictionary<DateTime, Dictionary<DateTime, double>> allRates = new Dictionary<DateTime, Dictionary<DateTime, double>>();
-        Dictionary<DateTime, Dictionary<DateTime, double>> allRatesInterpolated = new Dictionary<DateTime, Dictionary<DateTime, double>>();
+        HashSet<StandardCurve> allRates = new HashSet<StandardCurve>();
         foreach (string historicalDataFilePath in historicalDataFiles)
         {
             string fullFileName = Path.GetFileName(historicalDataFilePath);
             string fileName = fullFileName.Substring(0, fullFileName.Length - 4);
             if (DateTime.TryParseExact(fileName, "yyyyMMdd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime referenceDate))
             {
-                // Recupera preços dos futuros do historical data (salvo em arquivo)
-                Dictionary<DateTime, double> futurePrices = ReadCsv.ReadCsvFile(historicalDataFilePath);
+                if (referenceDate == new DateTime(2025, 01, 17))
+                {
+                    // Recupera preços dos futuros do historical data (salvo em arquivo)
+                    Dictionary<DateTime, double> futurePrices = ReadCsv.ReadCsvFile(historicalDataFilePath);
 
-                // Recupera preço spot
-                //double spotPrice = MarketDataUtils.GetUSDBTCSpotPrice(referenceDate);
-                double spotPrice = referenceDateFixingCollection.TryGetValue(referenceDate, out spotPrice) ? spotPrice : 0.0;
+                    // Recupera preço spot
+                    //double spotPrice = MarketDataUtils.GetUSDBTCSpotPrice(referenceDate);
+                    double spotPrice = referenceDateFixingCollection.TryGetValue(referenceDate, out spotPrice) ? spotPrice : 0.0;
 
-                // Calcula taxa implicita
-                FutureCurve futureCurve = new FutureCurve(futurePrices, referenceDate, spotPrice, calendar);
-                Dictionary<DateTime, double> rates = futureCurve.Rates;
-                allRates.Add(referenceDate, rates);
+                    // Calcula taxa implicita
+                    FutureCurve futureCurve = new FutureCurve(
+                        factors: futurePrices, 
+                        referenceDate: referenceDate, 
+                        spotPrice: spotPrice, 
+                        calendar:calendar, 
+                        singlePlot: false);
 
-                // Realiza interpolação
-                //CubicSplineInterpolation interpolation = new CubicSplineInterpolation(rates);
-                //Dictionary<DateTime, double> interpolatedCurve = interpolation.InterpolateAll();
+                    allRates.Add(futureCurve.GetStandardCurve());
 
-                //SvenssonCurve svenssonCurve = new SvenssonCurve(rates);
-                //Dictionary<DateTime, double> svenssonCurveResult = svenssonCurve.GetInterpolatedCurve();
-                //allRatesInterpolated.Add(referenceDate, svenssonCurveResult);
+                    // Cubic Splines
+                    CubicSplineCurve cubicSplineCurve = new CubicSplineCurve(
+                        referenceDate:referenceDate.AddHours(1),
+                        rates: futureCurve.Rates,
+                        singlePlot: false
+                    );
+                    allRates.Add(cubicSplineCurve.GetStandardCurve());
 
-                NelsonSiegelCurve nelsonSiegelCurve = new NelsonSiegelCurve(referenceDate, rates);
-                Dictionary<DateTime, double> nelsonSiegelCurveResult = nelsonSiegelCurve.GetInterpolatedCurve();
-                allRatesInterpolated.Add(referenceDate, nelsonSiegelCurveResult);
+                    // Nelson Siegel
+                    NelsonSiegelCurve nelsonSiegelCurve = new NelsonSiegelCurve(
+                        referenceDate: referenceDate.AddHours(2), 
+                        rates: futureCurve.Rates, 
+                        singlePlot: true);
+                    
+                    allRates.Add(nelsonSiegelCurve.GetStandardCurve());
 
-                // Plota o gráfico
-                PlotGraph plot = new PlotGraph(nelsonSiegelCurveResult, referenceDate);
-                plot.PlotCurveWithMonths();
+                    // Plota o gráfico individual
+                    //PlotGraph plot = new PlotGraph(curve);
+                    //plot.PlotCurveWithDates();
+                }
             } 
             else
             {
@@ -81,7 +92,7 @@ class Program
             }
         }
         // Plota todas as curvas
-        PlotMultipleGraphs plotAll = new PlotMultipleGraphs(allRatesInterpolated);
-        plotAll.PlotCurve();
+        PlotMultipleGraphs plotAll = new PlotMultipleGraphs(allRates);
+        plotAll.PlotCurveWithDates();
     }
 }

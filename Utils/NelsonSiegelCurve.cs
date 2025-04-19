@@ -11,12 +11,14 @@ namespace Utils
         private readonly Dictionary<DateTime, double> rates;
         private readonly DateTime referenceDate;
         private double beta0, beta1, beta2, tau;
+        private readonly bool SinglePlot;
 
-        public NelsonSiegelCurve(DateTime referenceDate, Dictionary<DateTime, double> rates)
+        public NelsonSiegelCurve(DateTime referenceDate, Dictionary<DateTime, double> rates, bool singlePlot)
         {
             this.referenceDate = referenceDate;
             this.rates = rates;
             FitCurve();
+            this.SinglePlot = singlePlot;
         }
 
         private double NelsonSiegelFunction(double maturity, double beta0, double beta1, double beta2, double tau)
@@ -79,7 +81,7 @@ namespace Utils
         }
         */
 
-        public Dictionary<DateTime, double> GetInterpolatedCurve()
+        public StandardCurve GetStandardCurve()
         {
             DateTime startDate = rates.Keys.Min();
             DateTime endDate = rates.Keys.Max();
@@ -90,7 +92,10 @@ namespace Utils
                 allDates.Add(currentDate);
             }
 
-            return allDates.ToDictionary(date => date, date => GetRate(date));
+            return new StandardCurve(
+                this.referenceDate,
+                allDates.ToDictionary(date => date, date => GetRate(date)),
+                this.SinglePlot);
         }
     }
 }

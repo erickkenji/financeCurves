@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using OpenQA.Selenium.DevTools.V129.Page;
 
 namespace Utils
 {
-    public class CubicSplineInterpolation
+    public class CubicSplineCurve
     {
         private readonly List<double> _x;
         private readonly List<double> _y;
@@ -18,12 +19,17 @@ namespace Utils
         private readonly List<double> _c;
         private readonly List<double> _d;
         private readonly List<DateTime> _dates;
+        private readonly DateTime ReferenceDate;
+        private readonly bool singlePlot;
 
-        public CubicSplineInterpolation(Dictionary<DateTime, double> curve)
+        public CubicSplineCurve(DateTime referenceDate, Dictionary<DateTime, double> rates, bool singlePlot)
         {
-            _dates = curve.Keys.OrderBy(d => d).ToList();
+            this.ReferenceDate = referenceDate;
+            this.singlePlot = singlePlot;
+
+            _dates = rates.Keys.OrderBy(d => d).ToList();
             _x = _dates.Select(date => (double)(date - _dates.First()).TotalDays).ToList();
-            _y = curve.OrderBy(kvp => kvp.Key).Select(kvp => kvp.Value).ToList();
+            _y = rates.OrderBy(kvp => kvp.Key).Select(kvp => kvp.Value).ToList();
 
             int n = _x.Count;
             _a = new List<double>(_y); // valores de _a do polinômio são inicializados com _y
@@ -97,6 +103,11 @@ namespace Utils
             }
 
             return interpolated;
+        }
+
+        public StandardCurve GetStandardCurve()
+        {
+            return new StandardCurve(this.ReferenceDate, this.InterpolateAll(), this.singlePlot);
         }
     }
 
