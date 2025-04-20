@@ -13,12 +13,12 @@ namespace Utils
         private double beta0, beta1, beta2, tau;
         private readonly bool SinglePlot;
 
-        public NelsonSiegelCurve(DateTime referenceDate, Dictionary<DateTime, double> rates, bool singlePlot)
+        public NelsonSiegelCurve(DateTime referenceDate, Dictionary<DateTime, double> rates, bool continuousPlot)
         {
             this.referenceDate = referenceDate;
             this.rates = rates;
             FitCurve();
-            this.SinglePlot = singlePlot;
+            this.SinglePlot = continuousPlot;
         }
 
         private double NelsonSiegelFunction(double maturity, double beta0, double beta1, double beta2, double tau)

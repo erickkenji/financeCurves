@@ -26,13 +26,13 @@ namespace Utils
         public double SpotPrice { get; private set; }
         public bool SinglePlot { get; private set; }
 
-        public FutureCurve(Dictionary<DateTime, double> factors, DateTime referenceDate, double spotPrice, Calendar calendar, bool singlePlot)
+        public FutureCurve(Dictionary<DateTime, double> factors, DateTime referenceDate, double spotPrice, Calendar calendar, bool continuousPlot)
         {
             this.Factors = factors;
             this.ReferenceDate = referenceDate;
             this.SpotPrice = spotPrice;
             this.Calendar = calendar;
-            this.SinglePlot = singlePlot;
+            this.SinglePlot = continuousPlot;
 
             // Calcula taxa implicita do fator
             Dictionary<DateTime, double> rates = new Dictionary<DateTime, double>() { };

@@ -38,6 +38,7 @@ class Program
 
         string historicalDataPath = Path.Combine(Directory.GetCurrentDirectory(), "..", "..", "..", "..", "HistoricalData");
         string[] historicalDataFiles = Directory.GetFiles(historicalDataPath);
+        StandardCurve bootstrappedRates;
 
         HashSet<StandardCurve> allRates = new HashSet<StandardCurve>();
         foreach (string historicalDataFilePath in historicalDataFiles)
@@ -60,30 +61,33 @@ class Program
                         factors: futurePrices, 
                         referenceDate: referenceDate, 
                         spotPrice: spotPrice, 
-                        calendar:calendar, 
-                        singlePlot: false);
-
-                    allRates.Add(futureCurve.GetStandardCurve());
+                        calendar:calendar,
+                        continuousPlot: false);
 
                     // Cubic Splines
                     CubicSplineCurve cubicSplineCurve = new CubicSplineCurve(
                         referenceDate:referenceDate.AddHours(1),
                         rates: futureCurve.Rates,
-                        singlePlot: false
+                        continuousPlot: true
                     );
-                    allRates.Add(cubicSplineCurve.GetStandardCurve());
 
                     // Nelson Siegel
                     NelsonSiegelCurve nelsonSiegelCurve = new NelsonSiegelCurve(
                         referenceDate: referenceDate.AddHours(2), 
-                        rates: futureCurve.Rates, 
-                        singlePlot: true);
+                        rates: futureCurve.Rates,
+                        continuousPlot: true);
                     
+                    allRates.Add(cubicSplineCurve.GetStandardCurve());
                     allRates.Add(nelsonSiegelCurve.GetStandardCurve());
+                    allRates.Add(futureCurve.GetStandardCurve());
 
                     // Plota o gráfico individual
                     //PlotGraph plot = new PlotGraph(curve);
                     //plot.PlotCurveWithDates();
+
+                    // Plota todas as curvas
+                    PlotMultipleGraphs plotAll = new PlotMultipleGraphs(allRates);
+                    plotAll.PlotCurveWithDates();
                 }
             } 
             else
@@ -91,8 +95,5 @@ class Program
                 Console.WriteLine($"FileName {fileName} has incorrect format.");
             }
         }
-        // Plota todas as curvas
-        PlotMultipleGraphs plotAll = new PlotMultipleGraphs(allRates);
-        plotAll.PlotCurveWithDates();
     }
 }

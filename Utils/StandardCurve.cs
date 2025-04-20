@@ -10,13 +10,13 @@ namespace Utils
     {
         public readonly DateTime referenceDate;
         public readonly Dictionary<DateTime, double> buckets;
-        public readonly bool singlePlot;
+        public readonly bool continuousPlot;
 
         public StandardCurve(DateTime referenceDate, Dictionary<DateTime, double> buckets, bool singlePlot)
         {
             this.referenceDate = referenceDate;
             this.buckets = buckets;
-            this.singlePlot = singlePlot;   
+            this.continuousPlot = singlePlot;   
         }
     }
 }

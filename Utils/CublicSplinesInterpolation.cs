@@ -22,10 +22,10 @@ namespace Utils
         private readonly DateTime ReferenceDate;
         private readonly bool singlePlot;
 
-        public CubicSplineCurve(DateTime referenceDate, Dictionary<DateTime, double> rates, bool singlePlot)
+        public CubicSplineCurve(DateTime referenceDate, Dictionary<DateTime, double> rates, bool continuousPlot)
         {
             this.ReferenceDate = referenceDate;
-            this.singlePlot = singlePlot;
+            this.singlePlot = continuousPlot;
 
             _dates = rates.Keys.OrderBy(d => d).ToList();
             _x = _dates.Select(date => (double)(date - _dates.First()).TotalDays).ToList();

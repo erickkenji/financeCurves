@@ -114,10 +114,12 @@ namespace Utils
     public class PlotMultipleGraphs
     {
         private readonly HashSet<StandardCurve> curves;
+        private readonly StandardCurve? overlapedCurve;
 
-        public PlotMultipleGraphs(HashSet<StandardCurve> curves)
+        public PlotMultipleGraphs(HashSet<StandardCurve> curves, StandardCurve? overlapedCurve = null)
         {
             this.curves = curves;
+            this.overlapedCurve = overlapedCurve;
         }
 
         public void PlotCurveWithMonths()
@@ -151,7 +153,8 @@ namespace Utils
                 var lineSeries = new LineSeries
                 {
                     Title = $"{referenceDate:dd/MM}", // Nome único para cada série
-                    MarkerType = MarkerType.Circle
+                    MarkerType = MarkerType.Circle,
+                    LineStyle = curve.continuousPlot ? LineStyle.Solid : LineStyle.None
                 };
 
                 foreach (var point in curve.buckets)
@@ -203,7 +206,8 @@ namespace Utils
                 var lineSeries = new LineSeries
                 {
                     Title = $"{referenceDate:dd/MM}", // Nome único para cada série
-                    MarkerType = MarkerType.Circle
+                    MarkerType = MarkerType.Circle,
+                    LineStyle = curve.continuousPlot ? LineStyle.Solid : LineStyle.None
                 };
 
                 foreach (var point in curve.buckets)
