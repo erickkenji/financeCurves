@@ -8,6 +8,7 @@ using QuantLib;
 using Calendar = QuantLib.Calendar;
 using Path = System.IO.Path;
 using Utils;
+using Curves;
 
 class Program
 {

@@ -8,8 +8,9 @@ using System.Threading.Tasks;
 using QuantLib;
 using Calendar = QuantLib.Calendar;
 using DateTime = System.DateTime;
+using Utils;
 
-namespace Utils
+namespace Curves
 {
     public class Vertex
     {

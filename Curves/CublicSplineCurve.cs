@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using OpenQA.Selenium.DevTools.V129.Page;
 
-namespace Utils
+namespace Curves
 {
     public class CubicSplineCurve
     {

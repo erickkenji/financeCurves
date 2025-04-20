@@ -11,6 +11,7 @@ using OxyPlot;
 using OxyPlot.Axes;
 using OxyPlot.Series;
 using static System.Net.Mime.MediaTypeNames;
+using Curves;
 
 namespace Utils
 {
