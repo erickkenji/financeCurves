@@ -23,7 +23,7 @@ class Program
         { new DateTime(2025, 01, 15), 100504.49},
         { new DateTime(2025, 01, 14), 96534.05},
         { new DateTime(2025, 01, 13), 94516.52},
-        { new DateTime(2025, 01, 10), 940701.45},
+        { new DateTime(2025, 01, 10), 94701.45},
         { new DateTime(2025, 01, 09), 92484.04},
         { new DateTime(2025, 01, 08), 95043.52},
         { new DateTime(2025, 01, 07), 96922.70},
@@ -40,57 +40,58 @@ class Program
         string historicalDataPath = Path.Combine(Directory.GetCurrentDirectory(), "..", "..", "..", "..", "HistoricalData");
         string[] historicalDataFiles = Directory.GetFiles(historicalDataPath);
 
+        Dictionary<DateTime, double> cubicSplineMseCollection = new Dictionary<DateTime, double>();
+        Dictionary<DateTime, double> nelsonSiegelMseCollection = new Dictionary<DateTime, double>();
+
         foreach (string historicalDataFilePath in historicalDataFiles)
         {
             string fullFileName = Path.GetFileName(historicalDataFilePath);
             string fileName = fullFileName.Substring(0, fullFileName.Length - 4);
-            if (DateTime.TryParseExact(fileName, "yyyyMMdd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime referenceDate))
-            {
-                if (referenceDate == new DateTime(2025, 01, 17))
-                {
-                    // Recupera preços dos futuros do historical data (salvo em arquivo)
-                    Dictionary<DateTime, double> futurePrices = ReadCsv.ReadCsvFile(historicalDataFilePath);
+            DateTime referenceDate = DateTime.ParseExact(fileName, "yyyyMMdd", CultureInfo.InvariantCulture, DateTimeStyles.None);
 
-                    // Recupera preço spot
-                    //double spotPrice = MarketDataUtils.GetUSDBTCSpotPrice(referenceDate);
-                    double spotPrice = referenceDateFixingCollection.TryGetValue(referenceDate, out spotPrice) ? spotPrice : 0.0;
+            // Recupera preços dos futuros do historical data (salvo em arquivo)
+            Dictionary<DateTime, double> futurePrices = ReadCsv.ReadCsvFile(historicalDataFilePath);
 
-                    // Calcula taxa implicita
-                    FutureCurve futureCurve = new FutureCurve(
-                        factors: futurePrices,
-                        referenceDate: referenceDate,
-                        spotPrice: spotPrice,
-                        calendar: calendar,
-                        continuousPlot: false);
+            // Recupera preço spot
+            //double spotPrice = MarketDataUtils.GetUSDBTCSpotPrice(referenceDate);
+            double spotPrice = referenceDateFixingCollection.TryGetValue(referenceDate, out spotPrice) ? spotPrice : 0.0;
 
-                    // Cubic Splines
-                    CubicSplineCurve cubicSplineCurve = new CubicSplineCurve(
-                        referenceDate: referenceDate.AddHours(1),
-                        rates: futureCurve.Rates,
-                        continuousPlot: true
-                    );
+            // Calcula taxa implicita
+            FutureCurve futureCurve = new FutureCurve(
+                factors: futurePrices,
+                referenceDate: referenceDate,
+                spotPrice: spotPrice,
+                calendar: calendar,
+                continuousPlot: false);
 
-                    // Nelson Siegel
-                    NelsonSiegelCurve nelsonSiegelCurve = new NelsonSiegelCurve(
-                        referenceDate: referenceDate.AddHours(2),
-                        rates: futureCurve.Rates,
-                        continuousPlot: true);
+            // Cubic Splines
+            CubicSplineCurve cubicSplineCurve = new CubicSplineCurve(
+                referenceDate: referenceDate.AddHours(1),
+                rates: futureCurve.Rates,
+                continuousPlot: true
+            );
 
-                    // Calcula erro quadrático médio para cada método
-                    double cubicSplineMse = MeanSquareError.CalculateMeanSquareError(
-                        futureCurve.GetStandardCurve(),
-                        cubicSplineCurve.GetStandardCurve());
-                    double nelsonSiegelMse = MeanSquareError.CalculateMeanSquareError(
-                        futureCurve.GetStandardCurve(),
-                        nelsonSiegelCurve.GetStandardCurve());
+            // Nelson Siegel
+            NelsonSiegelCurve nelsonSiegelCurve = new NelsonSiegelCurve(
+                referenceDate: referenceDate.AddHours(2),
+                rates: futureCurve.Rates,
+                continuousPlot: true);
 
+            // Calcula erro quadrático médio para cada método
+            double cubicSplineMse = MeanSquareError.CalculateMeanSquareError(
+                futureCurve.GetStandardCurve(),
+                cubicSplineCurve.GetStandardCurve());
+            double nelsonSiegelMse = MeanSquareError.CalculateMeanSquareError(
+                futureCurve.GetStandardCurve(),
+                nelsonSiegelCurve.GetStandardCurve());
 
-                }
-            }
-            else
-            {
-                Console.WriteLine($"FileName {fileName} has incorrect format.");
-            }
+            // Adiciona as metricas
+            cubicSplineMseCollection.Add(referenceDate, cubicSplineMse);
+            nelsonSiegelMseCollection.Add(referenceDate, nelsonSiegelMse);
         }
+
+        // Calcula desvio padrão
+        double cubicSplineStandardDeviation = StandardDeviation.Calculate(cubicSplineMseCollection.Values.ToArray());
+        double nelsonSiegelStandardDeviation = StandardDeviation.Calculate(nelsonSiegelMseCollection.Values.ToArray());
     }
 }

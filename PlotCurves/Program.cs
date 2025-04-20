@@ -22,7 +22,7 @@ class Program
         { new DateTime(2025, 01, 15), 100504.49},
         { new DateTime(2025, 01, 14), 96534.05},
         { new DateTime(2025, 01, 13), 94516.52},
-        { new DateTime(2025, 01, 10), 940701.45},
+        { new DateTime(2025, 01, 10), 94701.45},
         { new DateTime(2025, 01, 09), 92484.04},
         { new DateTime(2025, 01, 08), 95043.52},
         { new DateTime(2025, 01, 07), 96922.70},
@@ -31,7 +31,7 @@ class Program
         { new DateTime(2025, 01, 02), 96886.88},
         { new DateTime(2024, 12, 31), 93429.20},
         { new DateTime(2024, 12, 30), 92643.21}
-    };  
+    };
 
     static void Main(string[] args)
     {
