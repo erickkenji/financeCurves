@@ -43,6 +43,9 @@ class Program
         Dictionary<DateTime, double> cubicSplineMseCollection = new Dictionary<DateTime, double>();
         Dictionary<DateTime, double> nelsonSiegelMseCollection = new Dictionary<DateTime, double>();
 
+        Dictionary<DateTime, double> cubicSplineStandardDeviationDerivativeCollection = new Dictionary<DateTime, double>();
+        Dictionary<DateTime, double> nelsonSiegelStandardDeviationDerivativeCollection = new Dictionary<DateTime, double>();
+
         foreach (string historicalDataFilePath in historicalDataFiles)
         {
             string fullFileName = Path.GetFileName(historicalDataFilePath);
@@ -78,20 +81,28 @@ class Program
                 continuousPlot: true);
 
             // Calcula erro quadrático médio para cada método
-            double cubicSplineMse = MeanSquareError.CalculateMeanSquareError(
+            double cubicSplineMse = MetricsMethods.CalculateMeanSquareError(
                 futureCurve.GetStandardCurve(),
                 cubicSplineCurve.GetStandardCurve());
-            double nelsonSiegelMse = MeanSquareError.CalculateMeanSquareError(
+            double nelsonSiegelMse = MetricsMethods.CalculateMeanSquareError(
                 futureCurve.GetStandardCurve(),
                 nelsonSiegelCurve.GetStandardCurve());
 
-            // Adiciona as metricas
+            // Adiciona MSE
             cubicSplineMseCollection.Add(referenceDate, cubicSplineMse);
             nelsonSiegelMseCollection.Add(referenceDate, nelsonSiegelMse);
+
+            // Adiciona desvio padrão das primeiras derivadas
+            cubicSplineStandardDeviationDerivativeCollection.Add(
+                referenceDate,
+                MetricsMethods.CalcularPenalidadeDeSuavidade(cubicSplineCurve.GetStandardCurve()));
+            nelsonSiegelStandardDeviationDerivativeCollection.Add(
+                referenceDate,
+                MetricsMethods.CalcularPenalidadeDeSuavidade(nelsonSiegelCurve.GetStandardCurve()));
         }
 
         // Calcula desvio padrão
-        double cubicSplineStandardDeviation = StandardDeviation.Calculate(cubicSplineMseCollection.Values.ToArray());
-        double nelsonSiegelStandardDeviation = StandardDeviation.Calculate(nelsonSiegelMseCollection.Values.ToArray());
+        double cubicSplineStandardDeviation = MetricsMethods.CalculateStandardDeviation(cubicSplineMseCollection.Values.ToArray());
+        double nelsonSiegelStandardDeviation = MetricsMethods.CalculateStandardDeviation(nelsonSiegelMseCollection.Values.ToArray());
     }
 }
