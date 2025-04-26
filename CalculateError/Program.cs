@@ -46,59 +46,70 @@ class Program
         Dictionary<DateTime, double> cubicSplineStandardDeviationDerivativeCollection = new Dictionary<DateTime, double>();
         Dictionary<DateTime, double> nelsonSiegelStandardDeviationDerivativeCollection = new Dictionary<DateTime, double>();
 
+        Dictionary<DateTime, double> cubicSplinePenalties = new Dictionary<DateTime, double>();
+        Dictionary<DateTime, double> nelsonSiegelPenalties = new Dictionary<DateTime, double>();
+
         foreach (string historicalDataFilePath in historicalDataFiles)
         {
             string fullFileName = Path.GetFileName(historicalDataFilePath);
             string fileName = fullFileName.Substring(0, fullFileName.Length - 4);
             DateTime referenceDate = DateTime.ParseExact(fileName, "yyyyMMdd", CultureInfo.InvariantCulture, DateTimeStyles.None);
 
-            // Recupera preços dos futuros do historical data (salvo em arquivo)
-            Dictionary<DateTime, double> futurePrices = ReadCsv.ReadCsvFile(historicalDataFilePath);
+            if (referenceDate == new DateTime(2025, 01, 17))
+            {
+                // Recupera preços dos futuros do historical data (salvo em arquivo)
+                Dictionary<DateTime, double> futurePrices = ReadCsv.ReadCsvFile(historicalDataFilePath);
 
-            // Recupera preço spot
-            //double spotPrice = MarketDataUtils.GetUSDBTCSpotPrice(referenceDate);
-            double spotPrice = referenceDateFixingCollection.TryGetValue(referenceDate, out spotPrice) ? spotPrice : 0.0;
+                // Recupera preço spot
+                //double spotPrice = MarketDataUtils.GetUSDBTCSpotPrice(referenceDate);
+                double spotPrice = referenceDateFixingCollection.TryGetValue(referenceDate, out spotPrice) ? spotPrice : 0.0;
 
-            // Calcula taxa implicita
-            FutureCurve futureCurve = new FutureCurve(
-                factors: futurePrices,
-                referenceDate: referenceDate,
-                spotPrice: spotPrice,
-                calendar: calendar,
-                continuousPlot: false);
+                // Calcula taxa implicita
+                FutureCurve futureCurve = new FutureCurve(
+                    factors: futurePrices,
+                    referenceDate: referenceDate,
+                    spotPrice: spotPrice,
+                    calendar: calendar,
+                    continuousPlot: false);
 
-            // Cubic Splines
-            CubicSplineCurve cubicSplineCurve = new CubicSplineCurve(
-                referenceDate: referenceDate.AddHours(1),
-                rates: futureCurve.Rates,
-                continuousPlot: true
-            );
+                // Cubic Splines
+                CubicSplineCurve cubicSplineCurve = new CubicSplineCurve(
+                    referenceDate: referenceDate.AddHours(1),
+                    rates: futureCurve.Rates,
+                    continuousPlot: true
+                );
 
-            // Nelson Siegel
-            NelsonSiegelCurve nelsonSiegelCurve = new NelsonSiegelCurve(
-                referenceDate: referenceDate.AddHours(2),
-                rates: futureCurve.Rates,
-                continuousPlot: true);
+                // Nelson Siegel
+                NelsonSiegelCurve nelsonSiegelCurve = new NelsonSiegelCurve(
+                    referenceDate: referenceDate.AddHours(2),
+                    rates: futureCurve.Rates,
+                    continuousPlot: true);
 
-            // Calcula erro quadrático médio para cada método
-            double cubicSplineMse = MetricsMethods.CalculateMeanSquareError(
-                futureCurve.GetStandardCurve(),
-                cubicSplineCurve.GetStandardCurve());
-            double nelsonSiegelMse = MetricsMethods.CalculateMeanSquareError(
-                futureCurve.GetStandardCurve(),
-                nelsonSiegelCurve.GetStandardCurve());
+                // Calcula erro quadrático médio para cada método
+                double cubicSplineMse = MetricsMethods.CalculateMeanSquareError(
+                    futureCurve.GetStandardCurve(),
+                    cubicSplineCurve.GetStandardCurve());
+                double nelsonSiegelMse = MetricsMethods.CalculateMeanSquareError(
+                    futureCurve.GetStandardCurve(),
+                    nelsonSiegelCurve.GetStandardCurve());
 
-            // Adiciona MSE
-            cubicSplineMseCollection.Add(referenceDate, cubicSplineMse);
-            nelsonSiegelMseCollection.Add(referenceDate, nelsonSiegelMse);
+                // Adiciona MSE
+                cubicSplineMseCollection.Add(referenceDate, cubicSplineMse);
+                nelsonSiegelMseCollection.Add(referenceDate, nelsonSiegelMse);
 
-            // Adiciona desvio padrão das primeiras derivadas
-            cubicSplineStandardDeviationDerivativeCollection.Add(
-                referenceDate,
-                MetricsMethods.CalcularPenalidadeDeSuavidade(cubicSplineCurve.GetStandardCurve()));
-            nelsonSiegelStandardDeviationDerivativeCollection.Add(
-                referenceDate,
-                MetricsMethods.CalcularPenalidadeDeSuavidade(nelsonSiegelCurve.GetStandardCurve()));
+                // Adiciona desvio padrão das primeiras derivadas
+                cubicSplineStandardDeviationDerivativeCollection.Add(
+                    referenceDate,
+                    MetricsMethods.CalculateFirstDerivativeStandardDeviation(cubicSplineCurve.GetStandardCurve()));
+                nelsonSiegelStandardDeviationDerivativeCollection.Add(
+                    referenceDate,
+                    MetricsMethods.CalculateFirstDerivativeStandardDeviation(nelsonSiegelCurve.GetStandardCurve()));
+
+                var a = 
+                    MetricsMethods.SecondDerivativePerInterval(cubicSplineCurve.GetStandardCurve(), futureCurve.GetStandardCurve());
+                var b=     
+                MetricsMethods.SecondDerivativePerInterval(nelsonSiegelCurve.GetStandardCurve(), futureCurve.GetStandardCurve());
+            }
         }
 
         // Calcula desvio padrão
@@ -106,3 +117,4 @@ class Program
         double nelsonSiegelStandardDeviation = MetricsMethods.CalculateStandardDeviation(nelsonSiegelMseCollection.Values.ToArray());
     }
 }
+

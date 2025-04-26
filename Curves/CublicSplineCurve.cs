@@ -12,9 +12,9 @@ namespace Curves
 {
     public class CubicSplineCurve
     {
-        private readonly List<double> _x;
-        private readonly List<double> _y;
-        private readonly List<double> _a;
+        private readonly List<double> _x; // dias
+        private readonly List<double> _y; // taxas
+        private readonly List<double> _a; 
         private readonly List<double> _b;
         private readonly List<double> _c;
         private readonly List<double> _d;
@@ -37,7 +37,7 @@ namespace Curves
             _c = new List<double>(new double[n]);
             _d = new List<double>(new double[n - 1]);
 
-            // Cálculo da distância entre os pontos _x
+            // Cálculo da distância entre cada um dos pontos _x
             double[] h = new double[n - 1];
             for (int i = 0; i < n - 1; i++)
             {
@@ -66,6 +66,7 @@ namespace Curves
                 z[i] = (alpha[i] - h[i - 1] * z[i - 1]) / l[i];
             }
 
+            // Condiçoes de contorno: segunda derivada da última ponta é zero
             l[n - 1] = 1;
             z[n - 1] = 0;
             _c[n - 1] = 0;

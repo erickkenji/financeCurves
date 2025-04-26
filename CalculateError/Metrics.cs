@@ -40,25 +40,59 @@ namespace Metrics
             return MetricsMethods.CalculateStandardDeviation(derivatives.ToArray());
         }
 
-        public static double CalcularPenalidadeDeSuavidade(StandardCurve curve)
+        public static Dictionary<DateTime, double> SecondDerivativePerInterval(StandardCurve interpolatedCurve, StandardCurve originalCurve)
         {
-            var curva = curve.buckets;
-            // Ordena os pontos da curva pela data
-            var pontos = curva.OrderBy(x => x.Key).ToList();
+            // Ordenar os pontos pela data (necessário para garantir que estamos calculando as derivadas na ordem correta)
+            var interpolratedCurveBuckets = interpolatedCurve.buckets.OrderBy(p => p.Key).ToList();
+            var originalCurveBuckets = originalCurve.buckets.OrderBy(p => p.Key).ToList();
 
-            double penalidade = 0;
+            Dictionary<DateTime, double> secondDerivativeByVertex = new Dictionary<DateTime, double>();
+            List<double> variationPerVertex = new List<double>();
 
-            // Calcula a segunda derivada discreta e soma o quadrado
-            for (int i = 1; i < pontos.Count - 1; i++)
+            // Percorrer os pontos da curva não interpolada
+            for (int i = 0; i < originalCurveBuckets.Count - 1; i++)
             {
-                double h = (pontos[i + 1].Key - pontos[i - 1].Key).TotalDays; // Considerando o espaçamento entre as datas
-                double fDoublePrime = (pontos[i + 1].Value - 2 * pontos[i].Value + pontos[i - 1].Value) / (h * h);
+                // Encontrar os pontos da curva interpolada que estão dentro do intervalo definido pelos pontos da curva não interpolada
+                var firstDot = originalCurveBuckets[i];
+                var finalDot = originalCurveBuckets[i + 1];
 
-                // Penalidade de suavidade (soma do quadrado da segunda derivada)
-                penalidade += Math.Pow(fDoublePrime, 2);
+                // Extrair os pontos interpolados que estão entre o intervalo
+                var interpolatedInterval = interpolratedCurveBuckets.Where(p => p.Key >= firstDot.Key && p.Key <= finalDot.Key).ToList();
+
+                // Verificar se há pelo menos dois pontos interpolados no intervalo
+                if (interpolatedInterval.Count > 1)
+                {
+                    // Calcular a primeira derivada da curva interpolada
+                    List<double> firstDerivative = new List<double>();
+                    for (int j = 1; j < interpolatedInterval.Count; j++)
+                    {
+                        double deltaT = (interpolatedInterval[j].Key - interpolatedInterval[j - 1].Key).TotalDays;
+                        double deltaY = interpolatedInterval[j].Value - interpolatedInterval[j - 1].Value;
+                        firstDerivative.Add(deltaY / deltaT);
+                    }
+
+                    // Calcular a segunda derivada da curva interpolada
+                    List<double> secondDerivativeCollection = new List<double>();
+                    for (int j = 1; j < firstDerivative.Count; j++)
+                    {
+                        double deltaT = (interpolatedInterval[j + 1].Key - interpolatedInterval[j].Key).TotalDays;
+                        double deltaY = firstDerivative[j] - firstDerivative[j - 1];
+                        secondDerivativeCollection.Add(deltaY / deltaT);
+                    }
+
+                    // Medir a variação das derivadas no intervalo
+                    double variation = 0;
+                    foreach (var secondDerivative in secondDerivativeCollection)
+                    {
+                        variation += secondDerivative;  // Variação total da segunda derivada
+                    }
+
+                    variationPerVertex.Add(variation);
+                    secondDerivativeByVertex.Add(originalCurveBuckets[i].Key, variation);
+                }
             }
 
-            return penalidade;
+            return secondDerivativeByVertex;
         }
 
         public static double CalculateStandardDeviation(double[] values)
